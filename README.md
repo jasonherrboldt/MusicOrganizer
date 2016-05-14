@@ -14,7 +14,7 @@ Album tracks with no track number should be ordered by track name. If an album h
 
 A user may only specify the initial sorting within a genre, as well as the ascending / descending order. Secondary, tertiary, etc. sorting will be decided by the program. If an ascending / descending choice is not made, the default choice will be ascending. See the examples below. (The first row is the default, the 1st column is the only one the user can change.)
 
-[table coming soon]
+![alt tag](http://hwcdn.libsyn.com/p/1/0/1/10157ed826459618/table.png?c_id=11706657&expiration=1463238061&hwt=514ec66d202c03d9844671a1a01cc19b)
 
 Album track sorting should always be ascending, irrespective of the selected overall ordering. 
 
