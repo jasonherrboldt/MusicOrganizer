@@ -1,17 +1,22 @@
 package com.jason;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+
 public class Main {
 
     /*
 
     Command line usage:
 
-    input_filename 		the name of the input file to use (no path = current path)
-    output_filename 	the desired name of the output file (no path = current path)
-    -sortby 			valid arguments are artist, album_title, album_track, song_title,
+    input_filename      the name of the input file to use (no path = current path)
+    output_filename     the desired name of the output file (no path = current path)
+    -sortby             valid arguments are artist, album_title, album_track, song_title,
                         and time (can only be one)
-    -sortorder		    valid arguments are ascending and descending (can only be one)
-    -random		        the length of the random playlist to print
+    -sortorder          valid arguments are ascending and descending (can only be one)
+    -random             the length of the random playlist to print
 
     e.g.
     input_file.txt output_file.txt -sortby album_title -sortorder descending -random 21
@@ -68,6 +73,32 @@ public class Main {
         System.out.println("sortBy = " + sortBy);
         System.out.println("sortOrder = " + sortOrder);
         System.out.println("randomPlaylistLength = " + randomPlaylistLength);
+
+        printInputFile(inputFileName);
+
+    }
+
+    /**
+     * Print the input file to the console. (For debug mostly.)
+     *
+     * @param inputFileName The name of the input file to read. 
+     */
+    private static void printInputFile(String inputFileName) {
+        File customOrgFile = new File(inputFileName);
+        if(!customOrgFile.canRead()) {
+            throw new IllegalArgumentException("Unable to read file " + inputFileName + ".");
+        } else {
+            try {
+                BufferedReader br = new BufferedReader(new FileReader(customOrgFile));
+                String line;
+                System.out.println("");
+                while ((line = br.readLine()) != null) {
+                    System.out.println(line);
+                }
+            } catch (Exception e) {
+                throw new IllegalArgumentException("Unable to open file " + inputFileName);
+            }
+        }
     }
 
     /**
