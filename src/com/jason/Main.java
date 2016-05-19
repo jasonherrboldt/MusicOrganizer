@@ -2,8 +2,9 @@ package com.jason;
 
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
 
@@ -74,14 +75,39 @@ public class Main {
         System.out.println("sortOrder = " + sortOrder);
         System.out.println("randomPlaylistLength = " + randomPlaylistLength);
 
-        printInputFile(inputFileName);
+        // printInputFile(inputFileName);
+        List<Song> sortedSongs = sortSongs(inputFileName, sortBy, sortOrder, randomPlaylistLength);
+        printSortedSongs(sortedSongs);
 
+    }
+
+    /**
+     * Sort the songs in the input list.
+     *
+     * @param inputFileName         The name of the input file.
+     * @param sortBy                The field by which the songs should be ordered.
+     * @param sortOrder             Ascending or descending.
+     * @param randomPlaylistLength  The length of the random playlist to print.
+     * @return                      The sorted list of songs.
+     */
+    private static List<Song> sortSongs(String inputFileName, String sortBy, String sortOrder, int randomPlaylistLength) {
+        List<Song> songs = new ArrayList<>();
+        // todo
+        return songs;
+    }
+
+    /**
+     * Print the sorted list of songs. 
+     * @param songs The list of songs to print.
+     */
+    private static void printSortedSongs(List songs) {
+        // todo
     }
 
     /**
      * Print the input file to the console. (For debug mostly.)
      *
-     * @param inputFileName The name of the input file to read. 
+     * @param inputFileName The name of the input file to read.
      */
     private static void printInputFile(String inputFileName) {
         File customOrgFile = new File(inputFileName);
