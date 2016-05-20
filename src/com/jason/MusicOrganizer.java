@@ -29,7 +29,8 @@ public class MusicOrganizer {
      * @param sortOrder             Ascending or descending
      * @param randomPlaylistLength  Length of the random song playlist
      */
-    public MusicOrganizer(String inputFileName, String outputFileName, String sortBy, String sortOrder, int randomPlaylistLength) {
+    public MusicOrganizer(String inputFileName, String outputFileName, String sortBy, String sortOrder,
+                          int randomPlaylistLength) {
         this.inputFileName = inputFileName;
         this.outputFileName = outputFileName;
         this.sortBy = sortBy;
@@ -113,7 +114,7 @@ public class MusicOrganizer {
             } catch (Exception e) { // Could be NumberFormatException or IndexOutOfBoundsException.
                 // Do nothing (OK to use default values).
             }
-            
+
             Song song = new Song(songTitle, artist, albumName, genre, songLength, albumTrackNumber);
             System.out.println(song.toString() + "\n");
         }

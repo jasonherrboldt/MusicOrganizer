@@ -35,8 +35,8 @@ public class Song {
 
     @Override
     public String toString() {
-        return "Song title: " + songTitle + " | artist: " + artist + " | album name: " + albumName + " | genre: " + genre
-                + " | song length: " + songLength + " | album track #: " + albumTrackNumber + ".";
+        return "Song title: " + songTitle + " | artist: " + artist + " | album name: " + albumName + " | genre: "
+                + genre + " | song length: " + songLength + " | album track #: " + albumTrackNumber + ".";
     }
 
     /**

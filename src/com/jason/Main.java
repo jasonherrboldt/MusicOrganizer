@@ -28,7 +28,8 @@ public class Main {
 
         // Fail if the wrong number of command line arguments are received.
         if(args.length != 2 && args.length != 4 && args.length != 6 && args.length != 8) {
-            throw new IllegalArgumentException("Invalid number of arguments received. Args length must be 2, 4, 6, or 8.");
+            throw new IllegalArgumentException("Invalid number of arguments received. Args length must be 2, 4, 6, " +
+                    "or 8.");
         }
 
         String inputFileName = args[0];
@@ -45,8 +46,8 @@ public class Main {
                     if(!sortBy.equalsIgnoreCase("artist") && !sortBy.equalsIgnoreCase("album_track") &&
                             !sortBy.equalsIgnoreCase("album_title") && !sortBy.equalsIgnoreCase("song_title") &&
                             !sortBy.equalsIgnoreCase("time")) {
-                        throw new IllegalArgumentException("Illegal argument: " + args[i + 1] + ". Must either be artist, " +
-                                "album_title, album_track, song_title, or time");
+                        throw new IllegalArgumentException("Illegal argument: " + args[i + 1] + ". Must either be " +
+                                "artist, album_title, album_track, song_title, or time");
                     }
                     break;
                 }
@@ -54,8 +55,8 @@ public class Main {
                     testArg(args, i);
                     sortOrder = args[i + 1];
                     if(!sortOrder.equalsIgnoreCase("ascending") && !sortOrder.equalsIgnoreCase("descending")) {
-                        throw new IllegalArgumentException("Illegal argument: " + args[i + 1] + ". Must either be ascending " +
-                                "or descending");
+                        throw new IllegalArgumentException("Illegal argument: " + args[i + 1] + ". Must either be " +
+                                "ascending or descending");
                     }
                     break;
                 }
@@ -64,7 +65,8 @@ public class Main {
                     try {
                         randomPlaylistLength = Integer.parseInt(args[i + 1]);
                     } catch (NumberFormatException e) {
-                        throw new IllegalArgumentException("Argument " + args[i] + " must be followed by a positive integer.");
+                        throw new IllegalArgumentException("Argument " + args[i] + " must be followed by a positive " +
+                                "integer.");
                     }
                     break;
                 }
