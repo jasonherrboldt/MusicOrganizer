@@ -47,7 +47,7 @@ public class Main {
                             !sortBy.equalsIgnoreCase("album_title") && !sortBy.equalsIgnoreCase("song_title") &&
                             !sortBy.equalsIgnoreCase("time")) {
                         throw new IllegalArgumentException("Illegal argument: " + args[i + 1] + ". Must either be " +
-                                "artist, album_title, album_track, song_title, or time");
+                                "artist, album_title, song_title, or time");
                     }
                     break;
                 }
