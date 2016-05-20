@@ -24,7 +24,7 @@ Stan Getz & João Gilberto,Desafinado,Getz/Gilberto,4,Latin,244
 Inanimate Existence,Dharmakaya,Liberation Through Hearing,1,Death Metal,240
 The Police,Don't Stand So Close To Me,,,'80s,241
 Fleetwood Mac,Don't stop,Rumours,4,Rock,193
-This Mortal Coil,Drugs,Filigree & Shadow,23,Punk & Alternative,190
+This Mortal Coil,,Filigree & Shadow,23,Punk & Alternative,190
 808 State,E Talk,Newbuild,6,Electronic,241
 Survivor,Eye of the Tiger,,,'80s,243
 Rockwell,Faces (feat. Lauren Laimant),Obsolete Medium,2,Electronic,244
@@ -35,7 +35,7 @@ Miles Davis,Four,Blue Haze,2,Jazz,243
 Putrid Pile,God Of Degradation,House Of Dementia,4,Death Metal,241
 Inner City,Good Life,,,R&B,244
 Katalepsy,Gore Conspiracy,Autopsychosis,7,Death Metal,241
-"Earth, Wind & Fire",Got To Get You Into My Life,The Best Of Vol. 1,1,R&B,243
+Earth Wind & Fire,Got To Get You Into My Life,The Best Of Vol. 1,1,R&B,243
 Fwdslxsh,High Tide (Reprise),The Fall EP,6,Hip Hop / R&B,193
 Tensnake,Holla,Glow,10,Electronic,189
 Steely Dan,Home At Last,Aja,5,Classic Rock,332
@@ -84,7 +84,7 @@ Steely Dan,Peg,Aja,4,Classic Rock,235
 Squarepusher,Planet Gear,Just A Souvenir,8,Electronic,242
 Ta-ku,Poath,Latenyc,,Hip Hop / R&B,244
 Hall & Oates,Private Eyes,The Best Of Hall & Oates,3,'80s,217
-Mike Gao,"Ramen Hotline (feat. eLan, Go Yama & Elaquent)",Migamo,11,Hip Hop / R&B,192
+Mike Gao,Ramen Hotline (feat. eLan Go Yama & Elaquent),Migamo,11,Hip Hop / R&B,192
 Squarepusher,Red In Blue,Ufabulum,5,Electronic,191
 Antonio Carlos Jobim,Sabia,Stone Flower,9,Latin,240
 Hall & Oates,Say It Isn't So,The Best Of Hall & Oates,8,'80s,257

@@ -1,5 +1,10 @@
 package com.jason;
 
+/**
+ * A song.
+ *
+ * Created by Jason Herrboldt (intothefuture@gmail.com) on 5/19/16.
+ */
 public class Song {
 
     private String songTitle;
@@ -7,7 +12,7 @@ public class Song {
     private String albumName;
     private String genre;
     private String songLength;
-    private int albumTrack = -1;
+    private int albumTrackNumber = -1; // nonexistent until proven otherwise
 
     /**
      * Public constructor.
@@ -25,7 +30,55 @@ public class Song {
         this.albumName = albumName;
         this.genre = genre;
         this.songLength = songLength;
-        this.albumTrack = albumTrack;
+        this.albumTrackNumber = albumTrack;
+    }
+
+    @Override
+    public String toString() {
+        return "Song title: " + songTitle + " | artist: " + artist + " | album name: " + albumName + " | genre: " + genre
+                + " | song length: " + songLength + " | album track #: " + albumTrackNumber + ".";
+    }
+
+    /**
+     * @return the song title
+     */
+    public String getSongTitle() {
+        return songTitle;
+    }
+
+    /**
+     * @return the song artist
+     */
+    public String getArtist() {
+        return artist;
+    }
+
+    /**
+     * @return the album name
+     */
+    public String getAlbumName() {
+        return albumName;
+    }
+
+    /**
+     * @return the genre
+     */
+    public String getGenre() {
+        return genre;
+    }
+
+    /**
+     * @return the song length
+     */
+    public String getSongLength() {
+        return songLength;
+    }
+
+    /**
+     * @return the album track number
+     */
+    public int getAlbumTrackNumber() {
+        return albumTrackNumber;
     }
 
 }

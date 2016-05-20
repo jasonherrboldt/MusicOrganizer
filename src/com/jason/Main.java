@@ -3,9 +3,10 @@ package com.jason;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
-import java.util.ArrayList;
-import java.util.List;
 
+/**
+ * Created by Jason Herrboldt (intothefuture@gmail.com) on 5/19/16.
+ */
 public class Main {
 
     /*
@@ -69,61 +70,22 @@ public class Main {
                 }
             }
         }
-        System.out.println("\ninputFileName = " + inputFileName);
-        System.out.println("outputFileName = " + outputFileName);
-        System.out.println("sortBy = " + sortBy);
-        System.out.println("sortOrder = " + sortOrder);
-        System.out.println("randomPlaylistLength = " + randomPlaylistLength);
 
-        // printInputFile(inputFileName);
-        List<Song> sortedSongs = sortSongs(inputFileName, sortBy, sortOrder, randomPlaylistLength);
-        printSortedSongs(sortedSongs);
-
+        testInputFile(inputFileName);
+        MusicOrganizer mo = new MusicOrganizer(inputFileName, outputFileName, sortBy, sortOrder, randomPlaylistLength);
+        mo.readSongsIntoMemory();
+        // mo.printSongsToOutputFile();
     }
 
     /**
-     * Sort the songs in the input list.
-     *
-     * @param inputFileName         The name of the input file.
-     * @param sortBy                The field by which the songs should be ordered.
-     * @param sortOrder             Ascending or descending.
-     * @param randomPlaylistLength  The length of the random playlist to print.
-     * @return                      The sorted list of songs.
-     */
-    private static List<Song> sortSongs(String inputFileName, String sortBy, String sortOrder, int randomPlaylistLength) {
-        List<Song> songs = new ArrayList<>();
-        // todo
-        return songs;
-    }
-
-    /**
-     * Print the sorted list of songs. 
-     * @param songs The list of songs to print.
-     */
-    private static void printSortedSongs(List songs) {
-        // todo
-    }
-
-    /**
-     * Print the input file to the console. (For debug mostly.)
+     * Throw an exception if the input file can't be open and read.
      *
      * @param inputFileName The name of the input file to read.
      */
-    private static void printInputFile(String inputFileName) {
+    private static void testInputFile(String inputFileName) {
         File customOrgFile = new File(inputFileName);
         if(!customOrgFile.canRead()) {
             throw new IllegalArgumentException("Unable to read file " + inputFileName + ".");
-        } else {
-            try {
-                BufferedReader br = new BufferedReader(new FileReader(customOrgFile));
-                String line;
-                System.out.println("");
-                while ((line = br.readLine()) != null) {
-                    System.out.println(line);
-                }
-            } catch (Exception e) {
-                throw new IllegalArgumentException("Unable to open file " + inputFileName);
-            }
         }
     }
 
