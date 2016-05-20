@@ -116,7 +116,7 @@ Inner City,Good Life,,,R&B,244
 
 Katalepsy,Gore Conspiracy,Autopsychosis,7,Death Metal,241
 
-"Earth, Wind & Fire",Got To Get You Into My Life,The Best Of Vol. 1,1,R&B,243
+Earth Wind & Fire,Got To Get You Into My Life,The Best Of Vol. 1,1,R&B,243
 
 Fwdslxsh,High Tide (Reprise),The Fall EP,6,Hip Hop / R&B,193
 
@@ -214,7 +214,7 @@ Ta-ku,Poath,Latenyc,,Hip Hop / R&B,244
 
 Hall & Oates,Private Eyes,The Best Of Hall & Oates,3,'80s,217
 
-Mike Gao,"Ramen Hotline (feat. eLan, Go Yama & Elaquent)",Migamo,11,Hip Hop / R&B,192
+Mike Gao,Ramen Hotline (feat. eLan Go Yama & Elaquent),Migamo,11,Hip Hop / R&B,192
 
 Squarepusher,Red In Blue,Ufabulum,5,Electronic,191
 
