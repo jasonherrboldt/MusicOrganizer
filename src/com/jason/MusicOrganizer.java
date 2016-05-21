@@ -63,11 +63,17 @@ public class MusicOrganizer {
                 BufferedReader br = new BufferedReader(new FileReader(customOrgFile));
                 String line;
                 System.out.println("");
+                int unnamedAlbumCount = 0;
                 while ((line = br.readLine()) != null) {
                     // System.out.println(line); // (debug)
-                    Song song = parseSong(line); // Can be null!
-                    // addSongToAlbums(song);
+                    Song song = parseSong(line);
+                    if(song != null) { // OK to ignore null songs.
+                        // System.out.println(song.toString() + "\n");
+                        addSongToAlbums(song, unnamedAlbumCount);
+                        unnamedAlbumCount++;
+                    }
                 }
+                String x = ""; // to catch breakpoint
             } catch (Exception e) {
                 throw new IllegalArgumentException("Unable to open file " + inputFileName);
             }
@@ -75,7 +81,27 @@ public class MusicOrganizer {
     }
 
     /**
-     * Create a song from a text input line.
+     * Add a song to the list of albums. Song object can be null.
+     *
+     * @param song The song to add.
+     */
+    public void addSongToAlbums(Song song, int unnamedAlbumCount) {
+        String albumName = song.getAlbumName();
+        String unnamedAlbumName = "Unnamed Album # ";
+        if(albumName.equals("")) {
+            albumName = unnamedAlbumName + String.valueOf(unnamedAlbumCount);
+        }
+        if(albums.containsKey(albumName)) {
+            // todo: Add to existing album
+        } else {
+            List<Song> newAlbum = new ArrayList<>();
+            newAlbum.add(song);
+            albums.put(albumName, newAlbum);
+        }
+    }
+
+    /**
+     * Create a song from a text input line. (Can be null.)
      *
      * @param line The line to parse.
      */
@@ -86,7 +112,7 @@ public class MusicOrganizer {
         String artist = "";
         String songTitle = "";
         String albumName = "";
-        int albumTrackNumber = -1; // -1 is a placeholder for no album track number information.
+        int albumTrackNumber = -1;
         String genre = "";
         String songLength = "";
 
@@ -112,22 +138,10 @@ public class MusicOrganizer {
                 albumName = tokens.get(2);
                 albumTrackNumber = Integer.parseInt(tokens.get(3));
             } catch (Exception e) { // Could be NumberFormatException or IndexOutOfBoundsException.
-                // Do nothing (OK to use default values).
+                // Do nothing -- OK to use default values.
             }
-
-            Song song = new Song(songTitle, artist, albumName, genre, songLength, albumTrackNumber);
-            System.out.println(song.toString() + "\n");
+            return new Song(songTitle, artist, albumName, genre, songLength, albumTrackNumber);
         }
-        return null;
-    }
-
-    /**
-     * Add a song to the list of albums. Song object can be null.
-     *
-     * @param song The song to add.
-     */
-    private void addSongToAlbums(Song song) {
-        // todo
     }
 }
 
