@@ -41,7 +41,7 @@ public class MusicOrganizer {
     }
 
     /**
-     * For debug.
+     * (For debug.)
      */
     private void printArguments() {
         System.out.println("\ninputFileName = " + this.inputFileName);
@@ -56,27 +56,27 @@ public class MusicOrganizer {
      */
     public void readSongsIntoMemory() {
         File customOrgFile = new File(inputFileName);
-        if(!customOrgFile.canRead()) {
-            throw new IllegalArgumentException("Unable to read file " + inputFileName + ".");
-        } else {
+        if(customOrgFile.canRead()) {
             try {
                 BufferedReader br = new BufferedReader(new FileReader(customOrgFile));
                 String line;
-                System.out.println("");
-                int unnamedAlbumCount = 0;
+                // System.out.println("");
+                int unnamedAlbumCount = 0; // Necessary to differentiate different empty albums.
                 while ((line = br.readLine()) != null) {
                     // System.out.println(line); // (debug)
                     Song song = parseSong(line);
-                    if(song != null) { // OK to ignore null songs.
+                    if (song != null) {
                         // System.out.println(song.toString() + "\n");
                         addSongToAlbums(song, unnamedAlbumCount);
                         unnamedAlbumCount++;
-                    }
+                    } // OK to ignore null songs.
                 }
                 String x = ""; // to catch breakpoint
-            } catch (Exception e) {
+            } catch (Exception e) { // Can be FileNotFoundException or IOException
                 throw new IllegalArgumentException("Unable to open file " + inputFileName);
             }
+        } else {
+            throw new IllegalArgumentException("Unable to read file " + inputFileName + ".");
         }
     }
 
@@ -93,6 +93,7 @@ public class MusicOrganizer {
         }
         if(albums.containsKey(albumName)) {
             // todo: Add to existing album
+            albums.get(albumName).add(song);
         } else {
             List<Song> newAlbum = new ArrayList<>();
             newAlbum.add(song);
@@ -138,7 +139,9 @@ public class MusicOrganizer {
                 albumName = tokens.get(2);
                 albumTrackNumber = Integer.parseInt(tokens.get(3));
             } catch (Exception e) { // Could be NumberFormatException or IndexOutOfBoundsException.
-                // Do nothing -- OK to use default values.
+                // Reinstate default values.
+                albumName = "";
+                albumTrackNumber = -1;
             }
             return new Song(songTitle, artist, albumName, genre, songLength, albumTrackNumber);
         }
