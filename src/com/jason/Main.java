@@ -65,7 +65,10 @@ public class Main {
                     try {
                         randomPlaylistLength = Integer.parseInt(args[i + 1]);
                     } catch (NumberFormatException e) {
-                        throw new IllegalArgumentException("Argument " + args[i] + " must be followed by a positive " +
+                        throw new IllegalArgumentException("Illegal argument: " + args[i + 1] + ". Must be an integer.");
+                    }
+                    if(randomPlaylistLength < 1) {
+                        throw new IllegalArgumentException("Illegal argument: " + args[i + 1] + ". Must be a positive " +
                                 "integer.");
                     }
                     break;
@@ -76,6 +79,7 @@ public class Main {
         testInputFile(inputFileName);
         MusicOrganizer mo = new MusicOrganizer(inputFileName, outputFileName, sortBy, sortOrder, randomPlaylistLength);
         mo.readSongsIntoMemory();
+        // mo.sortSongs();
         // mo.printSongsToOutputFile();
     }
 

@@ -14,7 +14,7 @@ Must be able to successfully handle compilations, i.e. songs with various artist
 
 Tracks within the same album with no track numbers should be ordered by track name. If an album has both numbered and non-numbered tracks, non-numbered tracks should always come last, either when ascending or descending.
 
-Any method that contains music sorting logic must be tested. OK to use JUnit or Groovy. All tests must pass. 
+Test cases are nice, but not required -- the sorted output file will be verification enough.
 
 A user may specify the initial sorting within a genre, as well as the ascending / descending order. Secondary, tertiary, etc. sorting will be decided by the program. If an ascending / descending choice is not made, the default choice will be ascending. See the examples below. (The first row is the default, the 1st column is the field the user can change, then all other columns programatically follow.)
 

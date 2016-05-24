@@ -71,12 +71,23 @@ public class MusicOrganizer {
                         unnamedAlbumCount++;
                     } // OK to ignore null songs.
                 }
-                String x = ""; // to catch breakpoint
+                sortAlbumTracks();
+                printAlbums();
             } catch (Exception e) { // Can be FileNotFoundException or IOException
                 throw new IllegalArgumentException("Unable to open file " + inputFileName);
             }
         } else {
             throw new IllegalArgumentException("Unable to read file " + inputFileName + ".");
+        }
+    }
+
+    // For debug:
+    private void printAlbums() {
+        for(Map.Entry<String, List<Song>> album : albums.entrySet()) {
+            List<Song> songs = album.getValue();
+            for (Song song : songs) {
+                System.out.println(song.toString());
+            }
         }
     }
 
@@ -92,13 +103,63 @@ public class MusicOrganizer {
             albumName = unnamedAlbumName + String.valueOf(unnamedAlbumCount);
         }
         if(albums.containsKey(albumName)) {
-            // todo: Add to existing album
             albums.get(albumName).add(song);
         } else {
             List<Song> newAlbum = new ArrayList<>();
             newAlbum.add(song);
             albums.put(albumName, newAlbum);
         }
+    }
+
+    /**
+     * Put the album tracks in ascending order (user may not override).
+     */
+    private void sortAlbumTracks() {
+//        Iterator it = albums.entrySet().iterator();
+//        while (it.hasNext()) {
+//            Map.Entry <String, List<Song>> pair = (Map.Entry)it.next();
+//            System.out.println(pair.getKey() + " = " + pair.getValue().toString());
+//        }
+
+        for(Map.Entry<String, List<Song>> album : albums.entrySet()) {
+            // System.out.println(album.toString());
+            if(album.getValue().size() > 1) {
+                // System.out.println("Album with length > 1: " + album.getValue().toString());
+                // Song song = (Song)album.getValue();
+                List<Song> songs = album.getValue();
+                // if(songs.get(0).getAlbumName().equalsIgnoreCase("The Best Of Hall & Oates")) {
+//                    System.out.println("\nBefore sorting:\n");
+//                    for (Song song : songs) {
+//                        System.out.println(song.toString());
+//                    }
+//                for(Song song : album.getValue()) {
+//                    System.out.println(song.toString());
+//                }
+//                Collections.sort(songs, new Comparator<Song>() {
+//                    @Override
+//                    public int compare(Song s0, Song s1) {
+//                        if (s0.getAlbumTrackNumber() > s1.getAlbumTrackNumber()) return -1;
+//                        if (s0.getAlbumTrackNumber() < s1.getAlbumTrackNumber()) return 1;
+//                        return 0;
+//                    }
+//                });
+                    //  Collections.sort(personList, (Person p1, Person p2) -> p1.getSurName().compareTo(p2.getSurName()));
+                    Collections.sort(songs, (Song s1, Song s2) -> s1.getAlbumTrackNumber() - s2.getAlbumTrackNumber());
+//                    System.out.println("\nAfter sorting by track number:\n");
+//                    for (Song song : songs) {
+//                        System.out.println(song.toString());
+//                    }
+                // }
+            }
+        }
+
+    }
+
+    /**
+     * Sort the songs by the user's specifications.
+     */
+    public void sortSongs() {
+
     }
 
     /**
@@ -140,8 +201,8 @@ public class MusicOrganizer {
                 albumTrackNumber = Integer.parseInt(tokens.get(3));
             } catch (Exception e) { // Could be NumberFormatException or IndexOutOfBoundsException.
                 // Reinstate default values.
-                albumName = "";
-                albumTrackNumber = -1;
+//                albumName = "";
+//                albumTrackNumber = -1;
             }
             return new Song(songTitle, artist, albumName, genre, songLength, albumTrackNumber);
         }
