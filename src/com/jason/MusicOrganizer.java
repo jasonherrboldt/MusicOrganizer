@@ -114,45 +114,32 @@ public class MusicOrganizer {
     /**
      * Put the album tracks in ascending order (user may not override).
      */
-    private void sortAlbumTracks() {
-//        Iterator it = albums.entrySet().iterator();
-//        while (it.hasNext()) {
-//            Map.Entry <String, List<Song>> pair = (Map.Entry)it.next();
-//            System.out.println(pair.getKey() + " = " + pair.getValue().toString());
-//        }
-
+    public void sortAlbumTracks() {
         for(Map.Entry<String, List<Song>> album : albums.entrySet()) {
-            // System.out.println(album.toString());
             if(album.getValue().size() > 1) {
-                // System.out.println("Album with length > 1: " + album.getValue().toString());
-                // Song song = (Song)album.getValue();
-                List<Song> songs = album.getValue();
-                // if(songs.get(0).getAlbumName().equalsIgnoreCase("The Best Of Hall & Oates")) {
-//                    System.out.println("\nBefore sorting:\n");
-//                    for (Song song : songs) {
-//                        System.out.println(song.toString());
-//                    }
-//                for(Song song : album.getValue()) {
-//                    System.out.println(song.toString());
-//                }
-//                Collections.sort(songs, new Comparator<Song>() {
-//                    @Override
-//                    public int compare(Song s0, Song s1) {
-//                        if (s0.getAlbumTrackNumber() > s1.getAlbumTrackNumber()) return -1;
-//                        if (s0.getAlbumTrackNumber() < s1.getAlbumTrackNumber()) return 1;
-//                        return 0;
-//                    }
-//                });
-                    //  Collections.sort(personList, (Person p1, Person p2) -> p1.getSurName().compareTo(p2.getSurName()));
-                    Collections.sort(songs, (Song s1, Song s2) -> s1.getAlbumTrackNumber() - s2.getAlbumTrackNumber());
-//                    System.out.println("\nAfter sorting by track number:\n");
-//                    for (Song song : songs) {
-//                        System.out.println(song.toString());
-//                    }
-                // }
+                List<Song> albumSongs = album.getValue();
+                Collections.sort(albumSongs, (Song s1, Song s2) -> s1.getAlbumTrackNumber() - s2.getAlbumTrackNumber());
+
+                // Peel off trackless songs, sort them by title, and add them to the end of the album.
+                // List<String> songsToSortByTitle = new ArrayList<>();
+                List<Song> tracklessSongs = new ArrayList<>();
+                for(Song song : albumSongs) {
+                    if(song.getAlbumTrackNumber() == -1) {
+                        tracklessSongs.add(song);
+                        // songsToSortByTitle.add(song.getSongTitle());
+                    }
+                }
+                Collections.sort(tracklessSongs, (Song s1, Song s2) -> s1.getSongTitle().compareTo(s2.getSongTitle()));
+                /*
+                for(Song tracklessSong : tracklessSongs) {
+                    // todo: Read up on list manipulation.
+                }
+                for(Song tracklessSong : tracklessSongs) {
+                    albumSongs.add(tracklessSong);
+                }
+                */
             }
         }
-
     }
 
     /**

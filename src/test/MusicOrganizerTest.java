@@ -19,10 +19,26 @@ public class MusicOrganizerTest {
         assertEquals(x, "1");
     }
 
+    /**
+     * Test the sorting of a complete album.
+     */
     @Test
-    public void testAddingSongsToAlbum() {
-        // MusicOrganizer mo = new MusicOrganizer(inputFileName, outputFileName, sortBy, sortOrder, randomPlaylistLength);
-        MusicOrganizer mo = new MusicOrganizer("input_file.txt", "output_file.txt", "song", "ascending", 0);
+    public void testSortingAlbumTracks1() {
+        MusicOrganizer mo = new MusicOrganizer("input_file_test_1.txt", "output_file.txt", "song", "ascending", 0);
+        mo.readSongsIntoMemory();
+        mo.sortAlbumTracks();
+        // todo: how to confirm sort order?
+    }
+
+    /**
+     * Test the sorting order of an album with songs that are missing track numbers.
+     */
+    @Test
+    public void testSortingAlbumTracks2() {
+        MusicOrganizer mo = new MusicOrganizer("input_file_test_2.txt", "output_file.txt", "song", "ascending", 0);
+        mo.readSongsIntoMemory();
+        mo.sortAlbumTracks();
+        // todo: how to confirm sort order?
     }
 
 }
