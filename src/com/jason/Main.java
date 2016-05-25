@@ -5,6 +5,8 @@ import java.io.File;
 import java.io.FileReader;
 
 /**
+ * Main engine.
+ *
  * Created by Jason Herrboldt (intothefuture@gmail.com) on 5/19/16.
  */
 public class Main {
@@ -79,8 +81,8 @@ public class Main {
         testInputFile(inputFileName);
         MusicOrganizer mo = new MusicOrganizer(inputFileName, outputFileName, sortBy, sortOrder, randomPlaylistLength);
         mo.readSongsIntoMemory();
-        // mo.sortSongs();
-        // mo.printSongsToOutputFile();
+        mo.sortSongs();
+        mo.printSongsToOutputFile();
     }
 
     /**
