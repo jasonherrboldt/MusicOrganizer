@@ -2,6 +2,7 @@ package test;
 
 import java.util.*;
 
+import com.jason.Album;
 import com.jason.MusicOrganizer;
 import com.jason.Song;
 import org.junit.Test;
@@ -24,11 +25,11 @@ public class MusicOrganizerTest {
         mo.sortAlbumTracks();
         List<Integer> albumTrackNumbersBeforeSorting = new ArrayList<>();
         List<Integer> albumTrackNumbersAfterSorting = new ArrayList<>();
-        Map<String, List<Song>> albums = mo.getAlbums();
+        Map<String, Album> albums = mo.getAlbums();
         assertEquals(albums.size(), 1);
-        for(Map.Entry<String, List<Song>> album : albums.entrySet()) {
-            List<Song> albumSongs = album.getValue();
-            for(Song song : albumSongs) {
+        for(Map.Entry<String, Album> album : albums.entrySet()) {
+            Album albumSongs = album.getValue();
+            for(Song song : albumSongs.getSongs()) {
                 albumTrackNumbersBeforeSorting.add(song.getAlbumTrackNumber());
                 albumTrackNumbersAfterSorting.add(song.getAlbumTrackNumber());
             }
@@ -46,11 +47,11 @@ public class MusicOrganizerTest {
         MusicOrganizer mo = new MusicOrganizer("input_file_test_2.txt", "output_file.txt", "song", "ascending", 0);
         mo.readSongsIntoMemory();
         mo.sortAlbumTracks();
-        Map<String, List<Song>> albums = mo.getAlbums();
+        Map<String, Album> albums = mo.getAlbums();
         assertEquals(albums.size(), 1);
-        for(Map.Entry<String, List<Song>> album : albums.entrySet()) {
-            List<Song> albumSongs = album.getValue();
-            for(Song song : albumSongs) {
+        for(Map.Entry<String, Album> album : albums.entrySet()) {
+            Album albumSongs = album.getValue();
+            for(Song song : albumSongs.getSongs()) {
                 // todo: figure out how to test this.
             }
         }
