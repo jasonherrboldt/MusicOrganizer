@@ -18,7 +18,7 @@ public class MusicOrganizer {
     private String sortBy;
     private String sortOrder;
     private int randomPlaylistLength;
-    private Map<String, List<Song>> albums; // Map of album names to album tracks (can be single songs).
+    private Map<String, List<Song>> albums; // Map of album names to album tracks (albums may have 1...* songs).
 
     /**
      * Public constructor.
@@ -41,7 +41,7 @@ public class MusicOrganizer {
     }
 
     /**
-     * For debug.
+     * (For debug.)
      */
     private void printArguments() {
         System.out.println("\ninputFileName = " + this.inputFileName);
@@ -56,26 +56,106 @@ public class MusicOrganizer {
      */
     public void readSongsIntoMemory() {
         File customOrgFile = new File(inputFileName);
-        if(!customOrgFile.canRead()) {
-            throw new IllegalArgumentException("Unable to read file " + inputFileName + ".");
-        } else {
+        if(customOrgFile.canRead()) {
             try {
                 BufferedReader br = new BufferedReader(new FileReader(customOrgFile));
                 String line;
-                System.out.println("");
+                int unnamedAlbumCount = 0; // Necessary to differentiate empty albums.
                 while ((line = br.readLine()) != null) {
-                    // System.out.println(line); // (debug)
-                    Song song = parseSong(line); // Can be null!
-                    // addSongToAlbums(song);
+                    Song song = parseSong(line);
+                    if (song != null) {
+                        addSongToAlbums(song, unnamedAlbumCount);
+                        unnamedAlbumCount++;
+                    } // OK to ignore null songs (they've been logged to the console).
                 }
-            } catch (Exception e) {
-                throw new IllegalArgumentException("Unable to open file " + inputFileName);
+            } catch (Exception e) { // Could be FileNotFoundException or IOException.
+                throw new IllegalArgumentException("Unable to open file " + inputFileName + ".");
+            }
+        } else {
+            throw new IllegalArgumentException("Unable to read file " + inputFileName + ".");
+        }
+    }
+
+    /**
+     * Print every song in every album (for debug).
+     */
+    private void printAllSongsToConsole() {
+        for(Map.Entry<String, List<Song>> album : albums.entrySet()) {
+            List<Song> songs = album.getValue();
+            for (Song song : songs) {
+                System.out.println(song.toString());
             }
         }
     }
 
     /**
-     * Create a song from a text input line.
+     * Add a song to the list of albums. Song object can be null.
+     *
+     * @param song The song to add.
+     */
+    public void addSongToAlbums(Song song, int unnamedAlbumCount) {
+        if(song != null) {
+            String albumName = song.getAlbumName();
+            if(albumName.equals("")) {
+                albumName = "Unnamed Album # " + String.valueOf(unnamedAlbumCount);
+            }
+            if(albums.containsKey(albumName)) {
+                albums.get(albumName).add(song);
+            } else {
+                List<Song> newAlbum = new ArrayList<>();
+                newAlbum.add(song);
+                albums.put(albumName, newAlbum);
+            }
+        } // OK to ignore null songs.
+    }
+
+    /**
+     * Put the album tracks in ascending order (user may not override).
+     */
+    public void sortAlbumTracks() {
+        for(Map.Entry<String, List<Song>> album : albums.entrySet()) {
+            if(album.getValue().size() > 1) {
+                List<Song> albumSongs = album.getValue();
+                List<Song> sortedAlbumSongs = new ArrayList<>();
+                List<Song> sortedTracklessAlbumSongs = new ArrayList<>();
+                for(Song song : albumSongs) {
+                    if(song.getAlbumTrackNumber() > 0) {
+                        sortedAlbumSongs.add(song);
+                    } else {
+                        sortedTracklessAlbumSongs.add(song);
+                    }
+                }
+                // Sort songs ascending by track number.
+                Collections.sort(albumSongs, (Song s1, Song s2) -> s1.getAlbumTrackNumber() - s2.getAlbumTrackNumber());
+
+                // Sort songs without track numbers ascending by song title.
+                Collections.sort(sortedTracklessAlbumSongs, (Song s1, Song s2) ->
+                        s1.getSongTitle().compareTo(s2.getSongTitle()));
+
+                // Join the two sorted lists and use the resulting list to replace the current album.
+                sortedAlbumSongs.addAll(sortedTracklessAlbumSongs);
+                album.setValue(sortedAlbumSongs);
+            }
+        }
+    }
+
+    /**
+     * Sort the songs by the user's specifications.
+     */
+    public void sortSongs() {
+        sortAlbumTracks();
+        printAllSongsToConsole();
+    }
+
+    /**
+     * Print the sorted songs to output file by genre block (plus random playlist if requested).
+     */
+    public void printSongsToOutputFile() {
+
+    }
+
+    /**
+     * Create a song from a text input line. (Can be null.)
      *
      * @param line The line to parse.
      */
@@ -86,7 +166,7 @@ public class MusicOrganizer {
         String artist = "";
         String songTitle = "";
         String albumName = "";
-        int albumTrackNumber = -1; // -1 is a placeholder for no album track number information.
+        int albumTrackNumber = -1;
         String genre = "";
         String songLength = "";
 
@@ -112,22 +192,10 @@ public class MusicOrganizer {
                 albumName = tokens.get(2);
                 albumTrackNumber = Integer.parseInt(tokens.get(3));
             } catch (Exception e) { // Could be NumberFormatException or IndexOutOfBoundsException.
-                // Do nothing (OK to use default values).
+                // Do nothing; allow original values to persist.
             }
-
-            Song song = new Song(songTitle, artist, albumName, genre, songLength, albumTrackNumber);
-            System.out.println(song.toString() + "\n");
+            return new Song(songTitle, artist, albumName, genre, songLength, albumTrackNumber);
         }
-        return null;
-    }
-
-    /**
-     * Add a song to the list of albums. Song object can be null.
-     *
-     * @param song The song to add.
-     */
-    private void addSongToAlbums(Song song) {
-        // todo
     }
 }
 

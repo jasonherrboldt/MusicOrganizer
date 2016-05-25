@@ -35,8 +35,13 @@ public class Song {
 
     @Override
     public String toString() {
-        return "Song title: " + songTitle + " | artist: " + artist + " | album name: " + albumName + " | genre: "
-                + genre + " | song length: " + songLength + " | album track #: " + albumTrackNumber + ".";
+        if(albumTrackNumber != -1) {
+            return "Song title: " + songTitle + " | artist: " + artist + " | album name: " + albumName + " | genre: "
+                    + genre + " | song length: " + songLength + " | album track #: " + albumTrackNumber + ".";
+        } else {
+            return "Song title: " + songTitle + " | artist: " + artist + " | album name: " + albumName + " | genre: "
+                    + genre + " | song length: " + songLength + " | album track #: .";
+        }
     }
 
     /**
@@ -80,5 +85,4 @@ public class Song {
     public int getAlbumTrackNumber() {
         return albumTrackNumber;
     }
-
 }

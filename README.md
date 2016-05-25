@@ -1,6 +1,6 @@
 # MusicOrganizer
 ###Description
-(Under construction.) This is a coding exercise I made up to sharpen and demonstrate my Java skills. It's a command line driven program that reads a list of songs from a file, organizes them by genre, and prints the organized song list to another file. 
+(Under construction.) This is a coding exercise I made up to sharpen and demonstrate my Java skills. It's a command line driven program that reads a list of songs from a file, organizes them by genre, and prints the organized song list to another file. (Code was written in Java 8.)
 
 The user may elect to sort the songs within each genre by title, by artist, by song title, by album, or by song length, either all ascending or all descending. (Default sorting is by artist, then by album, then by album track, then by song title, then by song length, all ascending.) The user may also request a random playlist of any length (up to the input length) to be printed after the sorted list. 
 
@@ -14,7 +14,7 @@ Must be able to successfully handle compilations, i.e. songs with various artist
 
 Tracks within the same album with no track numbers should be ordered by track name. If an album has both numbered and non-numbered tracks, non-numbered tracks should always come last, either when ascending or descending.
 
-Any method that contains music sorting logic must be tested. OK to use JUnit or Groovy. All tests must pass. 
+Test cases are nice, but not required -- the sorted output file will be verification enough.
 
 A user may specify the initial sorting within a genre, as well as the ascending / descending order. Secondary, tertiary, etc. sorting will be decided by the program. If an ascending / descending choice is not made, the default choice will be ascending. See the examples below. (The first row is the default, the 1st column is the field the user can change, then all other columns programatically follow.)
 

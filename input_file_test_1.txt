@@ -1,0 +1,7 @@
+Steely Dan,Aja,Aja,2,Classic Rock,476
+Steely Dan,Black Cow,Aja,1,Classic Rock,308
+Steely Dan,Deacon Blues,Aja,3,Classic Rock,453
+Steely Dan,Home At Last,Aja,5,Classic Rock,332
+Steely Dan,I Got The News,Aja,6,Classic Rock,304
+Steely Dan,Josie,Aja,7,Classic Rock,271
+Steely Dan,Peg,Aja,4,Classic Rock,235

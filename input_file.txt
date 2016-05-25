@@ -12,7 +12,6 @@ Prince,The Ballad Of Dorothy Parker,Sign O' The Times [Disc 1],4,R&B,241
 Toco,Barracao,Outro Lugar,7,Latin,189
 Steely Dan,Black Cow,Aja,1,Classic Rock,308
 Teebs,Burner,Ardour,6,Electronic,192
-THE SOFT MOON,Circles,The Soft Moon,2,Punk & Alternative,242
 Sade,Clean Heart,Stronger Than Pride,7,R&B,240
 Squarepusher,The Coathanger,Just A Souvenir,2,Electronic,243
 Steely Dan,Deacon Blues,Aja,3,Classic Rock,453
@@ -78,7 +77,7 @@ Katalepsy,Number Of Death (13),Triumph Of Evilution,4,Death Metal,244
 Motels,Only The Lonely,,,'80s,194
 Hall & Oates,Out Of Touch,The Best Of Hall & Oates,10,'80s,248
 Sade,Paradise,Stronger Than Pride,2,R&B,242
-THE SOFT MOON,Parallels,The Soft Moon,6,Punk & Alternative,190
+THE SOFT MOON,Parallels,The Soft Moon,,Punk & Alternative,190
 Inanimate Existence,Paths to Enlightenment,Liberation Through Hearing,4,Death Metal,241
 Steely Dan,Peg,Aja,4,Classic Rock,235
 Squarepusher,Planet Gear,Just A Souvenir,8,Electronic,242
@@ -94,6 +93,7 @@ The Tubes,She's A Beauty,,15,'80s,241
 Hall & Oates,Some Things Are Better Left Unsaid,The Best Of Hall & Oates,11,'80s,325
 Rockwell,Somebodys Watching Me,,5,'80s,241
 Prince,Something In The Water (Does Not Compute),1999,7,R&B,242
+THE SOFT MOON,Circles,The Soft Moon,,Punk & Alternative,242
 Cal Tjader ,Spring Is Here,Soul Sauce,8,Latin,243
 Prince,Strange Relationship,Sign O' The Times [Disc 2],3,R&B,241
 Sheena Easton,Strut,,,'80s,240

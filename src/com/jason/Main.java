@@ -5,6 +5,8 @@ import java.io.File;
 import java.io.FileReader;
 
 /**
+ * Main engine.
+ *
  * Created by Jason Herrboldt (intothefuture@gmail.com) on 5/19/16.
  */
 public class Main {
@@ -47,7 +49,7 @@ public class Main {
                             !sortBy.equalsIgnoreCase("album_title") && !sortBy.equalsIgnoreCase("song_title") &&
                             !sortBy.equalsIgnoreCase("time")) {
                         throw new IllegalArgumentException("Illegal argument: " + args[i + 1] + ". Must either be " +
-                                "artist, album_title, album_track, song_title, or time");
+                                "artist, album_title, song_title, or time");
                     }
                     break;
                 }
@@ -65,7 +67,10 @@ public class Main {
                     try {
                         randomPlaylistLength = Integer.parseInt(args[i + 1]);
                     } catch (NumberFormatException e) {
-                        throw new IllegalArgumentException("Argument " + args[i] + " must be followed by a positive " +
+                        throw new IllegalArgumentException("Illegal argument: " + args[i + 1] + ". Must be an integer.");
+                    }
+                    if(randomPlaylistLength < 1) {
+                        throw new IllegalArgumentException("Illegal argument: " + args[i + 1] + ". Must be a positive " +
                                 "integer.");
                     }
                     break;
@@ -76,7 +81,8 @@ public class Main {
         testInputFile(inputFileName);
         MusicOrganizer mo = new MusicOrganizer(inputFileName, outputFileName, sortBy, sortOrder, randomPlaylistLength);
         mo.readSongsIntoMemory();
-        // mo.printSongsToOutputFile();
+        mo.sortSongs();
+        mo.printSongsToOutputFile();
     }
 
     /**
