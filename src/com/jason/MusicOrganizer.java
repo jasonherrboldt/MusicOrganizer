@@ -79,7 +79,7 @@ public class MusicOrganizer {
     /**
      * Print every song in every album (for debug).
      */
-    private void printAllSongsToConsole() {
+    public void printAllSongsToConsole() {
         for(Map.Entry<String, List<Song>> album : albums.entrySet()) {
             List<Song> songs = album.getValue();
             for (Song song : songs) {
@@ -196,6 +196,13 @@ public class MusicOrganizer {
             }
             return new Song(songTitle, artist, albumName, genre, songLength, albumTrackNumber);
         }
+    }
+
+    /**
+     * @return all albums.
+     */
+    public Map<String, List<Song>> getAlbums() {
+        return albums;
     }
 }
 
