@@ -66,7 +66,7 @@ public class MusicOrganizer {
                     if (song != null) {
                         addSongToAlbums(song, unnamedAlbumCount);
                         unnamedAlbumCount++;
-                    } // OK to ignore null songs (they've been logged to the console).
+                    } // OK to ignore null songs (invalid text lines have already been logged to the console).
                 }
             } catch (Exception e) { // Could be FileNotFoundException or IOException.
                 throw new IllegalArgumentException("Unable to open file " + inputFileName + ".");
@@ -126,7 +126,7 @@ public class MusicOrganizer {
                     }
                 }
                 // Sort songs ascending by track number.
-                Collections.sort(albumSongs, (Song s1, Song s2) -> s1.getAlbumTrackNumber() - s2.getAlbumTrackNumber());
+                Collections.sort(sortedAlbumSongs, (Song s1, Song s2) -> s1.getAlbumTrackNumber() - s2.getAlbumTrackNumber());
 
                 // Sort songs without track numbers ascending by song title.
                 Collections.sort(sortedTracklessAlbumSongs, (Song s1, Song s2) ->

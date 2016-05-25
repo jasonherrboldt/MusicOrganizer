@@ -6,7 +6,7 @@ The user may elect to sort the songs within each genre by title, by artist, by s
 
 ###Details, Assumptions, and Requirements
 
-Genre blocks are sorted by genre name, with an extra line break between blocks. For example, all alternative songs will be listed first, followed by all electronic songs, followed by all jazz, etc. (User may elect to sort genre blocks in either ascending or descending order.) 
+Genre blocks are sorted by genre name, with an extra line break between blocks. For example, all alternative songs will be listed first, followed by all electronic songs, followed by all jazz, etc. (User may elect to display genre blocks in either ascending or descending order.)
 
 When songs are sorted by album, songs by the same artist with no associated album should come after all other albums by the same artist if ascending, or before if descending. 
 
