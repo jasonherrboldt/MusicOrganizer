@@ -143,7 +143,6 @@ public class MusicOrganizer {
 
                 // Join the two sorted lists and use the resulting list to replace the current album.
                 sortedAlbumSongs.addAll(sortedTracklessAlbumSongs);
-                // album.setValue(sortedAlbumSongs);
                 album.getValue().replaceSongs(sortedAlbumSongs);
             }
         }
@@ -154,11 +153,11 @@ public class MusicOrganizer {
      */
     public void sortSongs() {
         sortAlbumTracks();
-        // sortSongsByUserSpecifications();
+        sortSongsByUserSpecifications();
         if(randomPlaylistLength > 0) {
             // createAndAppendRandomSongPlaylist();
         }
-        printAllSongsToConsole(); // debug.
+        // printAllSongsToConsole(); // debug.
     }
 
      //   -sortby can be genre (default), artist, album_title, album_track, song_title, or time.
@@ -168,7 +167,17 @@ public class MusicOrganizer {
     public void sortSongsByUserSpecifications() {
         switch (sortBy) {
             case "genre": {
-                // todo
+                // (Everything below is for debug.)
+                List<Song> allSongs = new ArrayList<>();
+                for(Map.Entry<String, Album> album : albums.entrySet()) {
+                    if(album.getValue().getLength() == 1) { // Just doing singles for now (debug).
+                        allSongs.add(album.getValue().getFirstSong());
+                    }
+                }
+                Collections.sort(allSongs, (Song s1, Song s2) -> s1.getGenre().compareTo(s2.getGenre()));
+                for(Song song : allSongs) {
+                    System.out.println(song.toString());
+                }
                 break;
             }
             case "artist": {
