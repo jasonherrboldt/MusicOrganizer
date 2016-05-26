@@ -1,0 +1,17 @@
+Pseudocode:
+
+private List<Map<String, List<Album>>> genreBlocks;
+private Set<String> knownGenres;
+
+For each line in the input file
+    Let song be a new Song object with the line information
+    If song is not null
+        Let genre be a new string equal to song's get genre method
+        If genre is not null
+            If knownGenres set does not contain genre
+                Add genre to knownGenres
+                Let newMap be a new map object that maps strings to lists of Song objects
+                
+                Add song to newList
+                Set newMap's key to genre
+                Set newMap's value to newList

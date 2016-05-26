@@ -13,8 +13,6 @@ public class Album {
     private String name;
     private int length;
     private String artist;
-    private boolean mixedGenres;
-    private Set<String> genres;
 
     /**
      * Public constructor.
@@ -26,8 +24,6 @@ public class Album {
         this.artist = song.getArtist();
         this.name = name;
         this.length = 1;
-        this.genres = new HashSet<>();
-        this.genres.add(song.getGenre());
     }
 
     /**
@@ -45,15 +41,9 @@ public class Album {
     public void addSong(Song song) {
         this.songs.add(song);
         length++;
-        genres.add(song.getGenre());
         if(!this.artist.equalsIgnoreCase("Various Artists")) {
             if(!song.getArtist().equalsIgnoreCase(this.artist)) {
                 this.artist = "Various Artists";
-            }
-        }
-        if(!mixedGenres) {
-            if(!genres.contains(song.getGenre())) {
-                mixedGenres = true;
             }
         }
     }
@@ -104,12 +94,6 @@ public class Album {
         this.artist = artist;
     }
 
-    /**
-     * @return true if album contains songs with mixed genres, false otherwise.
-     */
-    public boolean isMixedGenres() {
-        return mixedGenres;
-    }
 }
 
 
