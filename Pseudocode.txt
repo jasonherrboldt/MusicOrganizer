@@ -7,11 +7,11 @@ For each line in the input file
     Let song be a new Song object with the line information
     If song is not null
         Let genre be a new string equal to song's get genre method
-        If genre is not null
+        If genre is not null and not empty
             If knownGenres set does not contain genre
                 Add genre to knownGenres
-                Let newMap be a new map object that maps strings to lists of Song objects
-                
-                Add song to newList
-                Set newMap's key to genre
-                Set newMap's value to newList
+                Let newMap be a new map object that maps strings to lists of Album objects - let it's name be the value of the genre object's value.
+                Let newAlbum be a new Album object (arguments are the song and song's get album name method)
+                Set newMap's key to genre's value
+                Set newMap's value to newAlbum
+            else

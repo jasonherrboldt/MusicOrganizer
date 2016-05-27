@@ -17,7 +17,6 @@ public class Album {
     /**
      * Public constructor.
      */
-
     public Album(Song song, String name) {
         this.songs = new ArrayList<>();
         this.songs.add(song);
