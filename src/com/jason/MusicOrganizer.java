@@ -162,49 +162,31 @@ public class MusicOrganizer {
      */
     public void sortSongs() {
         sortAlbumTracks();
-
+        for(Album album : albumsMap.values()) {
+            sortedAlbums.add(album);
+        }
         switch (sortBy) {
             case "genre": {
-                // (Everything below is for debug.)
-                /*
-                List<Song> allSongs = new ArrayList<>();
-                for(Map.Entry<String, Album> album : albumsMap.entrySet()) {
-                    if(album.getValue().getLength() == 1) { // Just doing singles for now (debug).
-                        allSongs.add(album.getValue().getFirstSong());
-                    }
-                }
-                Collections.sort(allSongs, (Song s1, Song s2) -> s1.getGenre().compareTo(s2.getGenre()));
-                for(Song song : allSongs) {
-                    System.out.println(song.toString());
-                }
-                 */
-
-                // List<Album> allAlbums = new ArrayList<>();
-                for(Album album : albumsMap.values()) {
-                    sortedAlbums.add(album);
-                }
-                Collections.sort(sortedAlbums, (Album a1, Album a2) -> a1.getGenre().compareTo(a2.getGenre()));
-
+                Collections.sort(sortedAlbums, (Album a1, Album a2) -> a1.getName().toLowerCase().compareTo(a2.getName().toLowerCase()));
+                Collections.sort(sortedAlbums, (Album a1, Album a2) -> a1.getArtist().toLowerCase().compareTo(a2.getArtist().toLowerCase()));
+                Collections.sort(sortedAlbums, (Album a1, Album a2) -> a1.getGenre().toLowerCase().compareTo(a2.getGenre().toLowerCase()));
                 break;
             }
             case "artist": {
-                // todo
+                Collections.sort(sortedAlbums, (Album a1, Album a2) -> a1.getName().toLowerCase().compareTo(a2.getName().toLowerCase()));
+                Collections.sort(sortedAlbums, (Album a1, Album a2) -> a1.getArtist().toLowerCase().compareTo(a2.getArtist().toLowerCase()));
                 break;
             }
             case "album_title": {
-                // todo
-                break;
-            }
-            case "album_track": {
-                // todo
+                Collections.sort(sortedAlbums, (Album a1, Album a2) -> a1.getName().toLowerCase().compareTo(a2.getName().toLowerCase()));
                 break;
             }
             case "song_title": {
-                // todo
+                // todo: It's unnecessary to create albums on the fly just to tear them apart once the logic gets here.
                 break;
             }
             case "time": {
-                // todo
+                // todo: Ditto. Need upstream conditionals. 
                 break;
             }
         }
