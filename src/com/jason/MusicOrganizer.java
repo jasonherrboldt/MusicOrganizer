@@ -41,11 +41,8 @@ public class MusicOrganizer {
         this.randomPlaylistLength = randomPlaylistLength;
         this.songCount = 0;
         albums = new HashMap<>();
-        if(sortBy.equalsIgnoreCase("song") || sortBy.equalsIgnoreCase("time")) {
-            unsortedSongs = new ArrayList<>();
-        } else {
-            sortedAlbums = new ArrayList<>();
-        }
+        unsortedSongs = new ArrayList<>();
+        sortedAlbums = new ArrayList<>();
         printArguments();
     }
 
@@ -70,15 +67,21 @@ public class MusicOrganizer {
                 BufferedReader br = new BufferedReader(new FileReader(customOrgFile));
                 String line;
                 int unnamedAlbumCount = 0; // Necessary to differentiate empty albums.
-                while ((line = br.readLine()) != null) {
+                while((line = br.readLine()) != null) {
                     Song song = parseSong(line);
                     if (song != null) {
-                        if(!sortBy.equalsIgnoreCase("song") && !sortBy.equalsIgnoreCase("time")) {
+                        if((sortBy.equalsIgnoreCase("genre") || sortBy.equalsIgnoreCase("album") ||
+                                sortBy.equalsIgnoreCase("artist")) && randomPlaylistLength == 0) {
                             // Songs must be grouped by album prior to sorting.
-                            addSongToAlbums(song, unnamedAlbumCount);
-                            unnamedAlbumCount++;
-                        } else {
+                            unnamedAlbumCount = addSongToAlbums(song, unnamedAlbumCount);
+                        } else if((sortBy.equalsIgnoreCase("song") || sortBy.equalsIgnoreCase("time")) &&
+                                randomPlaylistLength > 0) {
                             // Pure chaos -- no need to organize songs by album.
+                            unsortedSongs.add(song);
+                        } else if((sortBy.equalsIgnoreCase("genre") || sortBy.equalsIgnoreCase("album") ||
+                                sortBy.equalsIgnoreCase("artist")) && randomPlaylistLength > 0) {
+                            // Add song to album map and unsorted song list.
+                            unnamedAlbumCount = addSongToAlbums(song, unnamedAlbumCount);
                             unsortedSongs.add(song);
                         }
                         songCount++;
@@ -124,11 +127,12 @@ public class MusicOrganizer {
      *
      * @param song The song to add.
      */
-    public void addSongToAlbums(Song song, int unnamedAlbumCount) {
+    public int addSongToAlbums(Song song, int unnamedAlbumCount) {
         if(song != null) {
             String albumName = song.getAlbumName();
             if(albumName.equals("")) {
                 albumName = "Unnamed Album # " + String.valueOf(unnamedAlbumCount);
+                unnamedAlbumCount++;
             }
             if(albums.containsKey(albumName)) {
                 albums.get(albumName).addSong(song);
@@ -137,6 +141,7 @@ public class MusicOrganizer {
                 albums.put(albumName, newAlbum);
             }
         } // OK to ignore null songs.
+        return unnamedAlbumCount;
     }
 
     /**
