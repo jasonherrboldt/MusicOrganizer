@@ -37,8 +37,11 @@ public class MusicOrganizer {
         this.sortOrder = sortOrder;
         this.songCount = 0;
         albums = new HashMap<>();
-        unsortedSongs = new ArrayList<>();
-        sortedAlbums = new ArrayList<>();
+        if(!sortBy.equalsIgnoreCase("song") && !sortBy.equalsIgnoreCase("time")) {
+            sortedAlbums = new ArrayList<>();
+        } else {
+            unsortedSongs = new ArrayList<>();
+        }
         printArguments();
     }
 
@@ -264,6 +267,20 @@ public class MusicOrganizer {
      */
     public Map<String, Album> getAlbums() {
         return albums;
+    }
+
+    /**
+     * @return all sorted albums.
+     */
+    public List<Album> getSortedAlbums() {
+        return sortedAlbums;
+    }
+
+    /**
+     * @return all unsorted songs.
+     */
+    public List<Song> getUnsortedSongs() {
+        return unsortedSongs;
     }
 }
 

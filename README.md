@@ -10,7 +10,7 @@ Albums are assumed to contain songs of the same genre. An album's genre is deter
 
 Must be able to successfully handle compilations, i.e. songs with various artist names and song titles that belong to the same album. (Does not need an album artist name -- albums with multiple artist names will default to an album artist of "Various Artists".)
 
-Songs by the same artist with no associated album should come after all other albums by the same artist, for both descending and ascending.
+Songs by the same artist with no associated album should come after all other albums by the same artist, for both descending and ascending. (Only required when user elects to sort by genre and artist.)
 
 Tracks within the same album with no track numbers should be ordered by track name. If an album has both numbered and non-numbered tracks, non-numbered tracks should always come last, either when ascending or descending.
 
