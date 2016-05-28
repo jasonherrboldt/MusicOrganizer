@@ -1,17 +1,44 @@
-Pseudocode:
+(Change the Album class name to SongCollection)
 
-private List<Map<String, List<Album>>> genreBlocks;
-private Set<String> knownGenres;
+private Map<String, Map<String, Album>> genreBlocks;
 
+In the constructor
+    If the sort order specified by the user is ascending
+        genreBlocks = new TreeMap<String, Map<String, SongCollection>>()
+    Else
+        genreBlocks = new TreeMap<String, Map<String, SongCollection>>(Collections.reverseOrder())
+
+// -sortby [valid arguments are genre, artist, album_title, song_title, and time (can only be one)]
+
+readSongsIntoMemory()
+    Let file be a new File object given the input file name
+    If file can be read
+        Switch on sortBy
+            Case "genre"
+                sortByGenre(file)
+            Case "artist"
+                sortByArtist(file)
+            Case "albumTitle"
+
+
+Let songCount be an int set to 0
+Let unnamedAlbumCount be an int set to 0
 For each line in the input file
     Let song be a new Song object with the line information
+    // pass unnamedAlbumCount to parseSong method, increment as needed
     If song is not null
         Let genre be a new string equal to song's get genre method
-        If genre is not null and not empty
-            If knownGenres set does not contain genre
-                Add genre to knownGenres
-                Let newMap be a new map object that maps strings to lists of Album objects - let it's name be the value of the genre object's value.
-                Let newAlbum be a new Album object (arguments are the song and song's get album name method)
-                Set newMap's key to genre's value
-                Set newMap's value to newAlbum
+        If genre is not null
+            If genreBlocks does not contain a key equal to genre's value
+                Let newSongCollection be a new SongCollection object (pass song to constructor)
+                Let newMap be a new String to SongCollection map
+                Set newMap's key to song's get album name value
+                Set newMap's value to newSongCollection
+                Set genreBlocks' key to genre
+                Set genreBlocks' value to newMap
             else
+                Let albumName be song.getAlbumName
+                Let songCollections be genreBlocks.get(genre) // map of album names to albums
+                If songCollections.contains(albumName)
+                    songCollections.get(albumName).addSong(song)
+                Else
