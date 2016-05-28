@@ -120,18 +120,52 @@ public class MusicOrganizerTest {
                 sortedGenres.add(album.getGenre());
             }
         }
-        Collections.sort(sortedGenres);
+        Collections.sort(sortedGenres, (String s1, String s2) -> s1.toLowerCase().compareTo(s2.toLowerCase()));
         assertEquals(sortedGenres, unsortedGenres);
     }
 
-    @Ignore
+    /**
+     * Assert artists appear in ascending order when user specifies ascending by artist.
+     */
+    @Test
     public void testSortByArtistAscending() {
-
+        MusicOrganizer mo = new MusicOrganizer("input_file.txt", "output_file.txt", "artist", "ascending");
+        mo.readSongsIntoMemory();
+        mo.sortAlbumTracks();
+        mo.sortSongs();
+        List<Album> sortedAlbums = mo.getSortedAlbums();
+        List<String> unsortedArtists = new ArrayList<>();
+        List<String> sortedArtists = new ArrayList<>();
+        for(Album album : sortedAlbums) {
+            if(!unsortedArtists.contains(album.getArtist())) {
+                unsortedArtists.add(album.getArtist());
+                sortedArtists.add(album.getArtist());
+            }
+        }
+        Collections.sort(sortedArtists, (String s1, String s2) -> s1.toLowerCase().compareTo(s2.toLowerCase()));
+        assertEquals(sortedArtists, unsortedArtists);
     }
 
-    @Ignore
+    /**
+     * Assert albums appear in ascending order when user specifies ascending by album.
+     */
+    @Test
     public void testSortByAlbumAscending() {
-
+        MusicOrganizer mo = new MusicOrganizer("input_file.txt", "output_file.txt", "album", "ascending");
+        mo.readSongsIntoMemory();
+        mo.sortAlbumTracks();
+        mo.sortSongs();
+        List<Album> sortedAlbums = mo.getSortedAlbums();
+        List<String> unsortedAlbumNames = new ArrayList<>();
+        List<String> sortedAlbumNames = new ArrayList<>();
+        for(Album album : sortedAlbums) {
+            if(!unsortedAlbumNames.contains(album.getName())) {
+                unsortedAlbumNames.add(album.getName());
+                sortedAlbumNames.add(album.getName());
+            }
+        }
+        Collections.sort(sortedAlbumNames, (String s1, String s2) -> s1.toLowerCase().compareTo(s2.toLowerCase()));
+        assertEquals(sortedAlbumNames, unsortedAlbumNames);
     }
 
     @Ignore
@@ -166,6 +200,54 @@ public class MusicOrganizerTest {
 
     @Ignore
     public void testSortByTimeDescending() {
+
+    }
+
+    /**
+     * Assert that sorting by genre also results in sorting by artist, album, and track number.
+     */
+    @Ignore
+    public void testInnerSortingByGenreAscending() {
+
+    }
+
+    /**
+     * Assert that sorting by artist also results in sorting by album and track number.
+     */
+    @Ignore
+    public void testInnerSortingByArtistAscending() {
+
+    }
+
+    /**
+     * Assert that sorting by album also results in sorting by track number.
+     */
+    @Ignore
+    public void testInnerSortingByAlbumAscending() {
+
+    }
+
+    /**
+     * Assert that sorting by genre also results in sorting by artist, album, and track number.
+     */
+    @Ignore
+    public void testInnerSortingByGenreDescending() {
+
+    }
+
+    /**
+     * Assert that sorting by artist also results in sorting by album and track number.
+     */
+    @Ignore
+    public void testInnerSortingByArtistDescending() {
+
+    }
+
+    /**
+     * Assert that sorting by album also results in sorting by track number.
+     */
+    @Ignore
+    public void testInnerSortingByAlbumDescending() {
 
     }
 }

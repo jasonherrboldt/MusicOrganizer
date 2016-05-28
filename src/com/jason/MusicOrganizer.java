@@ -42,7 +42,7 @@ public class MusicOrganizer {
         } else {
             unsortedSongs = new ArrayList<>();
         }
-        printArguments();
+        // printArguments(); // debug
     }
 
     /**
@@ -208,7 +208,7 @@ public class MusicOrganizer {
                 break;
             }
         }
-        printAllSongsToConsole(); // debug.
+        // printAllSongsToConsole(); // debug.
     }
 
     /**
