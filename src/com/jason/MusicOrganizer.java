@@ -19,8 +19,9 @@ public class MusicOrganizer {
     private String sortOrder;
     private int randomPlaylistLength;
     private int songCount;
-    private Map<String, Album> albumsMap; // Map of album names to albumsMap (albumsMap may have 1...* songs).
+    private Map<String, Album> albums; // Map of album names to albums (albums may have 1...* songs).
     private List<Album> sortedAlbums;
+    private List<Song> unsortedSongs;
 
     /**
      * Public constructor.
@@ -39,8 +40,12 @@ public class MusicOrganizer {
         this.sortOrder = sortOrder;
         this.randomPlaylistLength = randomPlaylistLength;
         this.songCount = 0;
-        albumsMap = new HashMap<>();
-        sortedAlbums = new ArrayList<>();
+        albums = new HashMap<>();
+        if(sortBy.equalsIgnoreCase("song") || sortBy.equalsIgnoreCase("time")) {
+            unsortedSongs = new ArrayList<>();
+        } else {
+            sortedAlbums = new ArrayList<>();
+        }
         printArguments();
     }
 
@@ -56,7 +61,7 @@ public class MusicOrganizer {
     }
 
     /**
-     * Put all the songs from the input file into the albumsMap map.
+     * Put all the songs from the input file into the albums map.
      */
     public void readSongsIntoMemory() {
         File customOrgFile = new File(inputFileName);
@@ -64,17 +69,17 @@ public class MusicOrganizer {
             try {
                 BufferedReader br = new BufferedReader(new FileReader(customOrgFile));
                 String line;
-                int unnamedAlbumCount = 0; // Necessary to differentiate empty albumsMap.
+                int unnamedAlbumCount = 0; // Necessary to differentiate empty albums.
                 while ((line = br.readLine()) != null) {
                     Song song = parseSong(line);
                     if (song != null) {
-                        addSongToAlbums(song, unnamedAlbumCount);
-                        unnamedAlbumCount++;
-                        String genre = song.getGenre();
-                        if(genre != null) { // Should never happen. But of course that means that it might.
-
+                        if(!sortBy.equalsIgnoreCase("song") && !sortBy.equalsIgnoreCase("time")) {
+                            // Songs must be grouped by album prior to sorting.
+                            addSongToAlbums(song, unnamedAlbumCount);
+                            unnamedAlbumCount++;
                         } else {
-                            System.out.println("Song " + song.toString() + " is missing genre. Line ignored.");
+                            // Pure chaos -- no need to organize songs by album.
+                            unsortedSongs.add(song);
                         }
                         songCount++;
                     } // OK to ignore null songs (invalid text lines have already been logged to the console).
@@ -98,9 +103,16 @@ public class MusicOrganizer {
     public void printAllSongsToConsole() {
         System.out.println("\n" + songCount + " songs processed:\n");
         int printCount = 0;
-        for(Album album : sortedAlbums) {
-            List<Song> songs = album.getSongs();
-            for (Song song : songs) {
+        if(!sortBy.equalsIgnoreCase("song") && !sortBy.equalsIgnoreCase("time")) {
+            for(Album album : sortedAlbums) {
+                List<Song> songs = album.getSongs();
+                for (Song song : songs) {
+                    System.out.println(printCount + " | " + song.toString());
+                    printCount++;
+                }
+            }
+        } else {
+            for(Song song : unsortedSongs) {
                 System.out.println(printCount + " | " + song.toString());
                 printCount++;
             }
@@ -108,7 +120,7 @@ public class MusicOrganizer {
     }
 
     /**
-     * Add a song to the list of albumsMap. Song object can be null.
+     * Add a song to the list of albums. Song object can be null.
      *
      * @param song The song to add.
      */
@@ -118,11 +130,11 @@ public class MusicOrganizer {
             if(albumName.equals("")) {
                 albumName = "Unnamed Album # " + String.valueOf(unnamedAlbumCount);
             }
-            if(albumsMap.containsKey(albumName)) {
-                albumsMap.get(albumName).addSong(song);
+            if(albums.containsKey(albumName)) {
+                albums.get(albumName).addSong(song);
             } else {
                 Album newAlbum = new Album(song, albumName);
-                albumsMap.put(albumName, newAlbum);
+                albums.put(albumName, newAlbum);
             }
         } // OK to ignore null songs.
     }
@@ -131,7 +143,7 @@ public class MusicOrganizer {
      * Put the album tracks in ascending order (user may not override).
      */
     public void sortAlbumTracks() {
-        for(Map.Entry<String, Album> album : albumsMap.entrySet()) {
+        for(Map.Entry<String, Album> album : albums.entrySet()) {
             if(album.getValue().getLength() > 1) {
                 List<Song> albumSongs = album.getValue().getSongs();
                 List<Song> sortedAlbumSongs = new ArrayList<>();
@@ -162,31 +174,46 @@ public class MusicOrganizer {
      */
     public void sortSongs() {
         sortAlbumTracks();
-        for(Album album : albumsMap.values()) {
-            sortedAlbums.add(album);
-        }
         switch (sortBy) {
             case "genre": {
+                for(Album album : albums.values()) {
+                    sortedAlbums.add(album);
+                }
                 Collections.sort(sortedAlbums, (Album a1, Album a2) -> a1.getName().toLowerCase().compareTo(a2.getName().toLowerCase()));
                 Collections.sort(sortedAlbums, (Album a1, Album a2) -> a1.getArtist().toLowerCase().compareTo(a2.getArtist().toLowerCase()));
                 Collections.sort(sortedAlbums, (Album a1, Album a2) -> a1.getGenre().toLowerCase().compareTo(a2.getGenre().toLowerCase()));
+                if(sortOrder.equalsIgnoreCase("descending")) {
+                    Collections.reverse(sortedAlbums);
+                }
                 break;
             }
             case "artist": {
+                for(Album album : albums.values()) {
+                    sortedAlbums.add(album);
+                }
                 Collections.sort(sortedAlbums, (Album a1, Album a2) -> a1.getName().toLowerCase().compareTo(a2.getName().toLowerCase()));
                 Collections.sort(sortedAlbums, (Album a1, Album a2) -> a1.getArtist().toLowerCase().compareTo(a2.getArtist().toLowerCase()));
+                if(sortOrder.equalsIgnoreCase("descending")) {
+                    Collections.reverse(sortedAlbums);
+                }
                 break;
             }
-            case "album_title": {
+            case "album": {
+                for(Album album : albums.values()) {
+                    sortedAlbums.add(album);
+                }
                 Collections.sort(sortedAlbums, (Album a1, Album a2) -> a1.getName().toLowerCase().compareTo(a2.getName().toLowerCase()));
+                if(sortOrder.equalsIgnoreCase("descending")) {
+                    Collections.reverse(sortedAlbums);
+                }
                 break;
             }
-            case "song_title": {
-                // todo: It's unnecessary to create albums on the fly just to tear them apart once the logic gets here.
+            case "song": {
+                Collections.sort(unsortedSongs, (Song s1, Song s2) -> s1.getSongTitle().toLowerCase().compareTo(s2.getSongTitle().toLowerCase()));
                 break;
             }
             case "time": {
-                // todo: Ditto. Need upstream conditionals. 
+                Collections.sort(unsortedSongs, (Song s1, Song s2) -> s1.getSongLength().compareTo(s2.getSongLength()));
                 break;
             }
         }
@@ -249,10 +276,10 @@ public class MusicOrganizer {
     }
 
     /**
-     * @return all albumsMap.
+     * @return all albums.
      */
-    public Map<String, Album> getAlbumsMap() {
-        return albumsMap;
+    public Map<String, Album> getAlbums() {
+        return albums;
     }
 }
 

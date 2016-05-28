@@ -26,7 +26,7 @@ public class MusicOrganizerTest {
         mo.sortAlbumTracks();
         List<Integer> albumTrackNumbersBeforeSorting = new ArrayList<>();
         List<Integer> albumTrackNumbersAfterSorting = new ArrayList<>();
-        Map<String, Album> albums = mo.getAlbumsMap();
+        Map<String, Album> albums = mo.getAlbums();
         assertEquals(albums.size(), 1);
         for(Map.Entry<String, Album> album : albums.entrySet()) {
             Album albumSongs = album.getValue();
@@ -48,7 +48,7 @@ public class MusicOrganizerTest {
         MusicOrganizer mo = new MusicOrganizer("input_file_test_2.txt", "output_file.txt", "song", "ascending", 0);
         mo.readSongsIntoMemory();
         mo.sortAlbumTracks();
-        Map<String, Album> albums = mo.getAlbumsMap();
+        Map<String, Album> albums = mo.getAlbums();
         assertEquals(albums.size(), 1);
         for(Map.Entry<String, Album> album : albums.entrySet()) {
             Album albumSongs = album.getValue();

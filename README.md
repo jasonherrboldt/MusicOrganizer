@@ -2,7 +2,7 @@
 ###Description
 (Under construction.) This is a coding exercise I made up to sharpen and demonstrate my Java skills (written in Java 8). It's a command line driven program that reads a list of songs from a file, sorts them according to user preference, and prints the organized song list to another file.
 
-The user may elect to have the songs sorted within each genre by genre, by artist, by album, by song title, or by song length, either all ascending or all descending. (Default is ascending by genre -- see the table below.) The user may also request a random playlist of any length (up to the input length) to be printed after the sorted list. 
+The user may elect to have the songs sorted by genre, by artist, by album, by song title, or by song length, either all ascending or all descending. (Default is ascending by genre -- see the table below.) The user may also request a random playlist of any length (up to the input length) to be printed after the sorted list.
 
 ###Details, Assumptions, and Requirements
 
@@ -28,7 +28,7 @@ Command line usage:
 
 * input_filename [the name of the input file to use (no path = current path)]
 * output_filename [the desired name of the output file (no path = current path)]
-* -sortby [valid arguments are genre, artist, album_title, song_title, and time (can only be one)]
+* -sortby [valid arguments are genre, artist, album, song, and time (can only be one)]
 * -sortorder [valid arguments are ascending and descending (can only be one)]
 * -random [the length of the random playlist to print]
 

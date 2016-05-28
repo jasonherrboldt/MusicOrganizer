@@ -17,13 +17,12 @@ public class Main {
 
     input_filename      the name of the input file to use (no path = current path)
     output_filename     the desired name of the output file (no path = current path)
-    -sortby             valid arguments are genre, artist, album_title, song_title,
-                        and time (can only be one)
+    -sortby             valid arguments are genre, artist, album, song, and time (can only be one)
     -sortorder          valid arguments are ascending and descending (can only be one)
     -random             the length of the random playlist to print
 
     e.g.
-    input_file.txt output_file.txt -sortby album_title -sortorder descending -random 21
+    input_file.txt output_file.txt -sortby album -sortorder descending -random 21
 
      */
     public static void main(String[] args) {
@@ -45,11 +44,11 @@ public class Main {
                 case "-sortby": {
                     testArg(args, i);
                     sortBy = args[i + 1];
-                    if(!sortBy.equalsIgnoreCase("artist") && !sortBy.equalsIgnoreCase("album_title") &&
-                            !sortBy.equalsIgnoreCase("song_title") && !sortBy.equalsIgnoreCase("time") &&
+                    if(!sortBy.equalsIgnoreCase("artist") && !sortBy.equalsIgnoreCase("album") &&
+                            !sortBy.equalsIgnoreCase("song") && !sortBy.equalsIgnoreCase("time") &&
                             !sortBy.equalsIgnoreCase("genre")) {
                         throw new IllegalArgumentException("Illegal argument: " + args[i + 1] + ". Must either be " +
-                                "genre, artist, album_title, song_title, or time");
+                                "genre, artist, album, song, or time");
                     }
                     break;
                 }
