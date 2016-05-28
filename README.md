@@ -1,24 +1,20 @@
 # MusicOrganizer
 ###Description
-(Under construction.) This is a coding exercise I made up to sharpen and demonstrate my Java skills. It's a command line driven program that reads a list of songs from a file, organizes them by genre, and prints the organized song list to another file. (Code was written in Java 8.)
+(Under construction.) This is a coding exercise I made up to sharpen and demonstrate my Java skills (written in Java 8). It's a command line driven program that reads a list of songs from a file, sorts them according to user preference, and prints the organized song list to another file.
 
-The user may elect to sort the songs within each genre by title, by artist, by song title, by album, or by song length, either all ascending or all descending. (Default sorting is by artist, then by album, then by album track, then by song title, then by song length, all ascending.) The user may also request a random playlist of any length (up to the input length) to be printed after the sorted list. 
+The user may elect to have the songs sorted within each genre by genre, by artist, by album, by song title, or by song length, either all ascending or all descending. (Default is ascending by genre -- see the table below.) The user may also request a random playlist of any length (up to the input length) to be printed after the sorted list. 
 
 ###Details, Assumptions, and Requirements
 
-Genre blocks are sorted by genre name, with an extra line break between blocks. For example, all alternative songs will be listed first, followed by all electronic songs, followed by all jazz, etc. (User may elect to display genre blocks in either ascending or descending order.)
-
-When songs are sorted by album, songs by the same artist with no associated album should come after all other albums by the same artist, for both descending and ascending.
+Songs by the same artist with no associated album should come after all other albums by the same artist, for both descending and ascending.
 
 Must be able to successfully handle compilations, i.e. songs with various artist names and song titles that belong to the same album. (Does not need an album artist name.) 
 
 Tracks within the same album with no track numbers should be ordered by track name. If an album has both numbered and non-numbered tracks, non-numbered tracks should always come last, either when ascending or descending.
 
-Test cases are nice, but not required -- the sorted output file will be verification enough.
+A user may specify the initial sorting within a genre, as well as the ascending / descending order. Secondary, tertiary, etc. sorting will be decided by the program. If an ascending / descending choice is not made, the default choice will be ascending. See the examples below. The first row is the default, the 1st column is the field the user can change, then all other columns programatically follow. Dashes indicate that no programatic choice will be made. (These are extreme edge cases.)
 
-A user may specify the initial sorting within a genre, as well as the ascending / descending order. Secondary, tertiary, etc. sorting will be decided by the program. If an ascending / descending choice is not made, the default choice will be ascending. See the examples below. (The first row is the default, the 1st column is the field the user can change, then all other columns programatically follow.)
-
-![alt tag](http://hwcdn.libsyn.com/p/1/0/1/10157ed826459618/table.png?c_id=11706657&expiration=1463238061&hwt=514ec66d202c03d9844671a1a01cc19b)
+![alt tag](http://traffic.libsyn.com/hardcoremathuser/sorting.png)
 
 Album track sorting should always be ascending, irrespective of the selected overall ordering. 
 
