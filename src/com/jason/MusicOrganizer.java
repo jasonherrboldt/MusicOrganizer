@@ -200,15 +200,23 @@ public class MusicOrganizer {
                 break;
             }
             case "song": {
-                Collections.sort(unsortedSongs, (Song s1, Song s2) -> s1.getSongTitle().toLowerCase().compareTo(s2.getSongTitle().toLowerCase()));
+                if(sortOrder.equalsIgnoreCase("ascending")) {
+                    Collections.sort(unsortedSongs, (Song s1, Song s2) -> s1.getSongTitle().toLowerCase().compareTo(s2.getSongTitle().toLowerCase()));
+                } else {
+                    Collections.sort(unsortedSongs, (Song s1, Song s2) -> s2.getSongTitle().toLowerCase().compareTo(s1.getSongTitle().toLowerCase()));
+                }
                 break;
             }
             case "time": {
-                Collections.sort(unsortedSongs, (Song s1, Song s2) -> s1.getSongLength().compareTo(s2.getSongLength()));
+                if(sortOrder.equalsIgnoreCase("ascending")) {
+                    Collections.sort(unsortedSongs, (Song s1, Song s2) -> s1.getSongLength() - s2.getSongLength());
+                } else {
+                    Collections.sort(unsortedSongs, (Song s1, Song s2) -> s2.getSongLength() - s1.getSongLength());
+                }
                 break;
             }
         }
-        // printAllSongsToConsole(); // debug.
+        printAllSongsToConsole(); // debug.
     }
 
     /**

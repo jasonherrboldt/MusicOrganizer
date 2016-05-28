@@ -103,13 +103,52 @@ public class MusicOrganizerTest {
     }
 
     /**
-     * Assert that genres are appearing in ascending order when user specifies ascending by genre.
+     * Assert songs appear in ascending order when user specifies ascending by song.
      */
     @Test
-    public void testSortByGenreAscending() {
+    public void testSortbySong() {
+        MusicOrganizer mo = new MusicOrganizer("input_file.txt", "output_file.txt", "song", "ascending");
+        mo.readSongsIntoMemory();
+        mo.sortSongs();
+        List<Song> unsortedSongs = mo.getUnsortedSongs();
+        List<String> unsortedSongNames = new ArrayList<>();
+        List<String> sortedSongNames = new ArrayList<>();
+        for(Song song : unsortedSongs) {
+            unsortedSongNames.add(song.getSongTitle());
+            sortedSongNames.add(song.getSongTitle());
+        }
+        Collections.sort(sortedSongNames, (String s1, String s2) -> s1.toLowerCase().compareTo(s2.toLowerCase()));
+        assertEquals(sortedSongNames, unsortedSongNames);
+        // todo: Also handle descending case.
+    }
+
+    /**
+     * Assert song lengths appear in ascending order when user specifies ascending by song length.
+     */
+    @Test
+    public void testSortByTime() {
+        MusicOrganizer mo = new MusicOrganizer("input_file.txt", "output_file.txt", "time", "ascending");
+        mo.readSongsIntoMemory();
+        mo.sortSongs();
+        List<Song> unsortedSongs = mo.getUnsortedSongs();
+        List<Integer> unsortedSongLengths = new ArrayList<>();
+        List<Integer> sortedSongLengths = new ArrayList<>();
+        for(Song song : unsortedSongs) {
+            unsortedSongLengths.add(song.getSongLength());
+            sortedSongLengths.add(song.getSongLength());
+        }
+        Collections.sort(sortedSongLengths, (Integer i1, Integer i2) -> i1 - i2);
+        assertEquals(sortedSongLengths, unsortedSongLengths);
+        // todo: Also handle descending case.
+    }
+
+    /**
+     * Assert that sorting by genre also results in sorting by artist, album, and track number.
+     */
+    @Ignore
+    public void testNestedSortingByGenre() {
         MusicOrganizer mo = new MusicOrganizer("input_file.txt", "output_file.txt", "genre", "ascending");
         mo.readSongsIntoMemory();
-        mo.sortAlbumTracks();
         mo.sortSongs();
         List<Album> sortedAlbums = mo.getSortedAlbums();
         List<String> unsortedGenres = new ArrayList<>();
@@ -122,136 +161,52 @@ public class MusicOrganizerTest {
         }
         Collections.sort(sortedGenres, (String s1, String s2) -> s1.toLowerCase().compareTo(s2.toLowerCase()));
         assertEquals(sortedGenres, unsortedGenres);
+        // todo: Also handle descending case.
+        // todo: Also handle nested sorting.
     }
 
     /**
-     * Assert artists appear in ascending order when user specifies ascending by artist.
+     * Assert that sorting by artist also results in sorting by album and track number.
      */
-    @Test
-    public void testSortByArtistAscending() {
+    @Ignore
+    public void testNestedSortingByArtist() {
         MusicOrganizer mo = new MusicOrganizer("input_file.txt", "output_file.txt", "artist", "ascending");
         mo.readSongsIntoMemory();
-        mo.sortAlbumTracks();
         mo.sortSongs();
         List<Album> sortedAlbums = mo.getSortedAlbums();
         List<String> unsortedArtists = new ArrayList<>();
         List<String> sortedArtists = new ArrayList<>();
         for(Album album : sortedAlbums) {
-            if(!unsortedArtists.contains(album.getArtist())) {
-                unsortedArtists.add(album.getArtist());
-                sortedArtists.add(album.getArtist());
-            }
+            unsortedArtists.add(album.getArtist());
+            sortedArtists.add(album.getArtist());
         }
         Collections.sort(sortedArtists, (String s1, String s2) -> s1.toLowerCase().compareTo(s2.toLowerCase()));
         assertEquals(sortedArtists, unsortedArtists);
+        // todo: Also handle descending case.
+        // todo: Also handle nested sorting.
     }
 
     /**
-     * Assert albums appear in ascending order when user specifies ascending by album.
+     * Assert that sorting by album also results in sorting by track number.
      */
-    @Test
-    public void testSortByAlbumAscending() {
+    @Ignore
+    public void testNestedSortingByAlbum() {
         MusicOrganizer mo = new MusicOrganizer("input_file.txt", "output_file.txt", "album", "ascending");
         mo.readSongsIntoMemory();
-        mo.sortAlbumTracks();
         mo.sortSongs();
         List<Album> sortedAlbums = mo.getSortedAlbums();
         List<String> unsortedAlbumNames = new ArrayList<>();
         List<String> sortedAlbumNames = new ArrayList<>();
         for(Album album : sortedAlbums) {
-            if(!unsortedAlbumNames.contains(album.getName())) {
-                unsortedAlbumNames.add(album.getName());
-                sortedAlbumNames.add(album.getName());
-            }
+            unsortedAlbumNames.add(album.getName());
+            sortedAlbumNames.add(album.getName());
         }
         Collections.sort(sortedAlbumNames, (String s1, String s2) -> s1.toLowerCase().compareTo(s2.toLowerCase()));
         assertEquals(sortedAlbumNames, unsortedAlbumNames);
-    }
-
-    @Ignore
-    public void testSortbySongAscending() {
-
-    }
-
-    @Ignore
-    public void testSortByTimeAscending() {
-
-    }
-
-    @Ignore
-    public void testSortByGenreDescending() {
-
-    }
-
-    @Ignore
-    public void testSortByArtistDescending() {
-
-    }
-
-    @Ignore
-    public void testSortByAlbumDescending() {
-
-    }
-
-    @Ignore
-    public void testSortbySongDescending() {
-
-    }
-
-    @Ignore
-    public void testSortByTimeDescending() {
-
-    }
-
-    /**
-     * Assert that sorting by genre also results in sorting by artist, album, and track number.
-     */
-    @Ignore
-    public void testInnerSortingByGenreAscending() {
-
-    }
-
-    /**
-     * Assert that sorting by artist also results in sorting by album and track number.
-     */
-    @Ignore
-    public void testInnerSortingByArtistAscending() {
-
-    }
-
-    /**
-     * Assert that sorting by album also results in sorting by track number.
-     */
-    @Ignore
-    public void testInnerSortingByAlbumAscending() {
-
-    }
-
-    /**
-     * Assert that sorting by genre also results in sorting by artist, album, and track number.
-     */
-    @Ignore
-    public void testInnerSortingByGenreDescending() {
-
-    }
-
-    /**
-     * Assert that sorting by artist also results in sorting by album and track number.
-     */
-    @Ignore
-    public void testInnerSortingByArtistDescending() {
-
-    }
-
-    /**
-     * Assert that sorting by album also results in sorting by track number.
-     */
-    @Ignore
-    public void testInnerSortingByAlbumDescending() {
-
+        // todo: Also handle descending case.
+        // todo: Also handle nested sorting.
     }
 }
-
 
 
 

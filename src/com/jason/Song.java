@@ -75,8 +75,8 @@ public class Song {
     /**
      * @return the song length
      */
-    public String getSongLength() {
-        return songLength;
+    public int getSongLength() {
+        return Integer.parseInt(this.songLength);
     }
 
     /**
@@ -84,5 +84,14 @@ public class Song {
      */
     public int getAlbumTrackNumber() {
         return albumTrackNumber;
+    }
+
+    /**
+     * Set the song's genre. (Allows albums to force a single album genre as per the documentation.)
+     *
+     * @param genre The genre to set.
+     */
+    public void setGenre(String genre) {
+        this.genre = genre;
     }
 }

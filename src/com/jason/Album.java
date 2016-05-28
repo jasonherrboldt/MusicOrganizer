@@ -40,13 +40,21 @@ public class Album {
      * @param song The song to add.
      */
     public void addSong(Song song) {
-        this.songs.add(song);
-        length++;
+        // Program documentation explicitly states that album artists are not supported.
+        // Albums of mixed artists automatically results in an album artist of "Various Artists".
         if(!this.artist.equalsIgnoreCase("Various Artists")) {
             if(!song.getArtist().equalsIgnoreCase(this.artist)) {
                 this.artist = "Various Artists";
             }
         }
+        // Program documentation explicitly states that albums of mixed genres are not supported.
+        // Behavior is enforced to avoid the appearance of a bug. WILL alter input data, but the users
+        // can't say they weren't warned.
+        if(!song.getGenre().equalsIgnoreCase(this.genre)) {
+            song.setGenre(this.genre);
+        }
+        this.songs.add(song);
+        length++;
     }
 
     /**
