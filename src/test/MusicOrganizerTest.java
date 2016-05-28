@@ -64,26 +64,64 @@ public class MusicOrganizerTest {
     }
 
     /**
-     * Assert that an album object will take on a value of "Various Artists" if songs by different artists are assigned
-     * to the same album.
-     */
-    @Ignore
-    public void testCompilationArtistName() {
-
-    }
-
-    /**
      * Album tracks should always display in ascending track order, irrespective of the ascending / descending choice
      * made by the user.
      */
-    @Ignore
-    public void testAlbumTrackSortingForDescending() {
+    @Test
+    public void testSortingAlbumTracks3() {
+        MusicOrganizer mo = new MusicOrganizer("input_file_test_1.txt", "output_file.txt", "genre", "descending");
+        mo.readSongsIntoMemory();
+        mo.sortAlbumTracks();
+        List<Integer> albumTrackNumbersBeforeSorting = new ArrayList<>();
+        List<Integer> albumTrackNumbersAfterSorting = new ArrayList<>();
+        Map<String, Album> albums = mo.getAlbums();
+        for(Map.Entry<String, Album> album : albums.entrySet()) {
+            Album albumSongs = album.getValue();
+            for(Song song : albumSongs.getSongs()) {
+                albumTrackNumbersBeforeSorting.add(song.getAlbumTrackNumber());
+                albumTrackNumbersAfterSorting.add(song.getAlbumTrackNumber());
+            }
 
+            Collections.sort(albumTrackNumbersAfterSorting);
+            assertEquals(albumTrackNumbersAfterSorting, albumTrackNumbersBeforeSorting);
+        }
     }
 
-    @Ignore
-    public void testSortByGenreAscending() {
+    /**
+     * Assert that an album object will take on a value of "Various Artists" if songs by different artists are assigned
+     * to the same album.
+     */
+    @Test
+    public void testCompilationArtistName() {
+        MusicOrganizer mo = new MusicOrganizer("input_file_test_3.txt", "output_file.txt", "genre", "ascending");
+        mo.readSongsIntoMemory();
+        mo.sortAlbumTracks();
+        Map<String, Album> albums = mo.getAlbums();
+        for(Map.Entry<String, Album> album : albums.entrySet()) {
+            assertEquals(album.getValue().getArtist(), "Various Artists");
+        }
+    }
 
+    /**
+     * Assert that genres are appearing in ascending order when user specifies ascending by genre.
+     */
+    @Test
+    public void testSortByGenreAscending() {
+        MusicOrganizer mo = new MusicOrganizer("input_file.txt", "output_file.txt", "genre", "ascending");
+        mo.readSongsIntoMemory();
+        mo.sortAlbumTracks();
+        mo.sortSongs();
+        List<Album> sortedAlbums = mo.getSortedAlbums();
+        List<String> unsortedGenres = new ArrayList<>();
+        List<String> sortedGenres = new ArrayList<>();
+        for(Album album : sortedAlbums) {
+            if(!unsortedGenres.contains(album.getGenre())) {
+                unsortedGenres.add(album.getGenre());
+                sortedGenres.add(album.getGenre());
+            }
+        }
+        Collections.sort(sortedGenres);
+        assertEquals(sortedGenres, unsortedGenres);
     }
 
     @Ignore
