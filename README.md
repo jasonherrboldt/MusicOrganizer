@@ -6,13 +6,15 @@ The user may elect to have the songs sorted within each genre by genre, by artis
 
 ###Details, Assumptions, and Requirements
 
-Songs by the same artist with no associated album should come after all other albums by the same artist, for both descending and ascending.
+Albums are assumed to contain songs of the same genre. An album's genre is determined by the genre of the first song that is added to it (not necessarily the song with the lowest album track number.)
 
-Must be able to successfully handle compilations, i.e. songs with various artist names and song titles that belong to the same album. (Does not need an album artist name.) 
+Must be able to successfully handle compilations, i.e. songs with various artist names and song titles that belong to the same album. (Does not need an album artist name -- albums with multiple artist names will default to an album artist of "Various Artists".)
+
+Songs by the same artist with no associated album should come after all other albums by the same artist, for both descending and ascending.
 
 Tracks within the same album with no track numbers should be ordered by track name. If an album has both numbered and non-numbered tracks, non-numbered tracks should always come last, either when ascending or descending.
 
-A user may specify the initial sorting within a genre, as well as the ascending / descending order. Secondary, tertiary, etc. sorting will be decided by the program. If an ascending / descending choice is not made, the default choice will be ascending. See the examples below. The first row is the default, the 1st column is the field the user can change, then all other columns programatically follow. Dashes indicate that no programatic choice will be made. (These are extreme edge cases.)
+A user may specify the initial sorting, as well as the ascending / descending order. Secondary, tertiary, etc. sorting will be decided by the program. If an ascending / descending choice is not made, the default choice will be ascending. See the examples below. The first row is the default. The user may choose to sort by any row, then all other columns programatically follow. Dashes indicate that no programatic choice will be made. (These are extreme edge cases.)
 
 ![alt tag](http://traffic.libsyn.com/hardcoremathuser/sorting.png)
 

@@ -19,9 +19,8 @@ public class MusicOrganizer {
     private String sortOrder;
     private int randomPlaylistLength;
     private int songCount;
-    private Map<String, Album> albums; // Map of album names to albums (albums may have 1...* songs).
-    private List<Map<String, List<Album>>> genreBlocks; // Map genre names to lists of songs.
-    private Set<String> knownGenres;
+    private Map<String, Album> albumsMap; // Map of album names to albumsMap (albumsMap may have 1...* songs).
+    private List<Album> sortedAlbums;
 
     /**
      * Public constructor.
@@ -40,10 +39,9 @@ public class MusicOrganizer {
         this.sortOrder = sortOrder;
         this.randomPlaylistLength = randomPlaylistLength;
         this.songCount = 0;
-        albums = new HashMap<>();
+        albumsMap = new HashMap<>();
+        sortedAlbums = new ArrayList<>();
         printArguments();
-        genreBlocks = new ArrayList<>();
-        knownGenres = new HashSet<>();
     }
 
     /**
@@ -58,7 +56,7 @@ public class MusicOrganizer {
     }
 
     /**
-     * Put all the songs from the input file into the albums map.
+     * Put all the songs from the input file into the albumsMap map.
      */
     public void readSongsIntoMemory() {
         File customOrgFile = new File(inputFileName);
@@ -66,12 +64,12 @@ public class MusicOrganizer {
             try {
                 BufferedReader br = new BufferedReader(new FileReader(customOrgFile));
                 String line;
-                // int unnamedAlbumCount = 0; // Necessary to differentiate empty albums.
+                int unnamedAlbumCount = 0; // Necessary to differentiate empty albumsMap.
                 while ((line = br.readLine()) != null) {
                     Song song = parseSong(line);
                     if (song != null) {
-                        // addSongToAlbums(song, unnamedAlbumCount);
-                        // unnamedAlbumCount++;
+                        addSongToAlbums(song, unnamedAlbumCount);
+                        unnamedAlbumCount++;
                         String genre = song.getGenre();
                         if(genre != null) { // Should never happen. But of course that means that it might.
 
@@ -98,17 +96,19 @@ public class MusicOrganizer {
      * Print every song in every album (for debug).
      */
     public void printAllSongsToConsole() {
-        System.out.println("");
-        for(Map.Entry<String, Album> album : albums.entrySet()) {
-            List<Song> songs = album.getValue().getSongs();
+        System.out.println("\n" + songCount + " songs processed:\n");
+        int printCount = 0;
+        for(Album album : sortedAlbums) {
+            List<Song> songs = album.getSongs();
             for (Song song : songs) {
-                System.out.println(song.toString());
+                System.out.println(printCount + " | " + song.toString());
+                printCount++;
             }
         }
     }
 
     /**
-     * Add a song to the list of albums. Song object can be null.
+     * Add a song to the list of albumsMap. Song object can be null.
      *
      * @param song The song to add.
      */
@@ -118,59 +118,57 @@ public class MusicOrganizer {
             if(albumName.equals("")) {
                 albumName = "Unnamed Album # " + String.valueOf(unnamedAlbumCount);
             }
-            if(albums.containsKey(albumName)) {
-                albums.get(albumName).addSong(song);
+            if(albumsMap.containsKey(albumName)) {
+                albumsMap.get(albumName).addSong(song);
             } else {
                 Album newAlbum = new Album(song, albumName);
-                albums.put(albumName, newAlbum);
+                albumsMap.put(albumName, newAlbum);
             }
         } // OK to ignore null songs.
     }
 
-
-    // Whoops, nope. Needs to happen after genre blocks have been created. Needs to take genre block as argument.
     /**
      * Put the album tracks in ascending order (user may not override).
      */
-//    public void sortAlbumTracks() {
-//        for(Map.Entry<String, Album> album : albums.entrySet()) {
-//            if(album.getValue().getLength() > 1) {
-//                List<Song> albumSongs = album.getValue().getSongs();
-//                List<Song> sortedAlbumSongs = new ArrayList<>();
-//                List<Song> sortedTracklessAlbumSongs = new ArrayList<>();
-//                for(Song song : albumSongs) {
-//                    if(song.getAlbumTrackNumber() > 0) {
-//                        sortedAlbumSongs.add(song);
-//                    } else {
-//                        sortedTracklessAlbumSongs.add(song);
-//                    }
-//                }
-//                // Sort songs ascending by track number.
-//                Collections.sort(sortedAlbumSongs, (Song s1, Song s2) -> s1.getAlbumTrackNumber() - s2.getAlbumTrackNumber());
-//
-//                // Sort songs without track numbers ascending by song title.
-//                Collections.sort(sortedTracklessAlbumSongs, (Song s1, Song s2) ->
-//                        s1.getSongTitle().compareTo(s2.getSongTitle()));
-//
-//                // Join the two sorted lists and use the resulting list to replace the current album.
-//                sortedAlbumSongs.addAll(sortedTracklessAlbumSongs);
-//                album.getValue().replaceSongs(sortedAlbumSongs);
-//            }
-//        }
-//    }
+    public void sortAlbumTracks() {
+        for(Map.Entry<String, Album> album : albumsMap.entrySet()) {
+            if(album.getValue().getLength() > 1) {
+                List<Song> albumSongs = album.getValue().getSongs();
+                List<Song> sortedAlbumSongs = new ArrayList<>();
+                List<Song> sortedTracklessAlbumSongs = new ArrayList<>();
+                for(Song song : albumSongs) {
+                    if(song.getAlbumTrackNumber() > 0) {
+                        sortedAlbumSongs.add(song);
+                    } else {
+                        sortedTracklessAlbumSongs.add(song);
+                    }
+                }
+                // Sort songs ascending by track number.
+                Collections.sort(sortedAlbumSongs, (Song s1, Song s2) -> s1.getAlbumTrackNumber() - s2.getAlbumTrackNumber());
+
+                // Sort songs without track numbers ascending by song title.
+                Collections.sort(sortedTracklessAlbumSongs, (Song s1, Song s2) ->
+                        s1.getSongTitle().compareTo(s2.getSongTitle()));
+
+                // Join the two sorted lists and use the resulting list to replace the current album.
+                sortedAlbumSongs.addAll(sortedTracklessAlbumSongs);
+                album.getValue().replaceSongs(sortedAlbumSongs);
+            }
+        }
+    }
 
     /**
      * Sort the songs by the user's specifications.
      */
     public void sortSongs() {
-        // sortAlbumTracks(); // nope. needs to happen later.
+        sortAlbumTracks();
 
         switch (sortBy) {
             case "genre": {
                 // (Everything below is for debug.)
                 /*
                 List<Song> allSongs = new ArrayList<>();
-                for(Map.Entry<String, Album> album : albums.entrySet()) {
+                for(Map.Entry<String, Album> album : albumsMap.entrySet()) {
                     if(album.getValue().getLength() == 1) { // Just doing singles for now (debug).
                         allSongs.add(album.getValue().getFirstSong());
                     }
@@ -180,6 +178,12 @@ public class MusicOrganizer {
                     System.out.println(song.toString());
                 }
                  */
+
+                // List<Album> allAlbums = new ArrayList<>();
+                for(Album album : albumsMap.values()) {
+                    sortedAlbums.add(album);
+                }
+                Collections.sort(sortedAlbums, (Album a1, Album a2) -> a1.getGenre().compareTo(a2.getGenre()));
 
                 break;
             }
@@ -208,7 +212,7 @@ public class MusicOrganizer {
         if(randomPlaylistLength > 0) {
             // createAndAppendRandomSongPlaylist();
         }
-        // printAllSongsToConsole(); // debug.
+        printAllSongsToConsole(); // debug.
     }
 
     /**
@@ -263,10 +267,10 @@ public class MusicOrganizer {
     }
 
     /**
-     * @return all albums.
+     * @return all albumsMap.
      */
-    public Map<String, Album> getAlbums() {
-        return albums;
+    public Map<String, Album> getAlbumsMap() {
+        return albumsMap;
     }
 }
 

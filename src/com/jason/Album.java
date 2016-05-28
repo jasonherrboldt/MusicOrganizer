@@ -13,6 +13,7 @@ public class Album {
     private String name;
     private int length;
     private String artist;
+    private String genre;
 
     /**
      * Public constructor.
@@ -23,6 +24,7 @@ public class Album {
         this.artist = song.getArtist();
         this.name = name;
         this.length = 1;
+        this.genre = song.getGenre();
     }
 
     /**
@@ -91,6 +93,13 @@ public class Album {
      */
     public void setArtist(String artist) {
         this.artist = artist;
+    }
+
+    /**
+     * @return The genre of the first track of the album.
+     */
+    public String getGenre() {
+        return genre;
     }
 
 }
