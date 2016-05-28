@@ -17,7 +17,6 @@ public class MusicOrganizer {
     private String outputFileName;
     private String sortBy;
     private String sortOrder;
-    private int randomPlaylistLength;
     private int songCount;
     private Map<String, Album> albums; // Map of album names to albums (albums may have 1...* songs).
     private List<Album> sortedAlbums;
@@ -30,15 +29,12 @@ public class MusicOrganizer {
      * @param outputFileName        The name of the output file
      * @param sortBy                The field by which the songs should be sorted
      * @param sortOrder             Ascending or descending
-     * @param randomPlaylistLength  Length of the random song playlist
      */
-    public MusicOrganizer(String inputFileName, String outputFileName, String sortBy, String sortOrder,
-                          int randomPlaylistLength) {
+    public MusicOrganizer(String inputFileName, String outputFileName, String sortBy, String sortOrder) {
         this.inputFileName = inputFileName;
         this.outputFileName = outputFileName;
         this.sortBy = sortBy;
         this.sortOrder = sortOrder;
-        this.randomPlaylistLength = randomPlaylistLength;
         this.songCount = 0;
         albums = new HashMap<>();
         unsortedSongs = new ArrayList<>();
@@ -54,7 +50,6 @@ public class MusicOrganizer {
         System.out.println("outputFileName = " + this.outputFileName);
         System.out.println("sortBy = " + this.sortBy);
         System.out.println("sortOrder = " + this.sortOrder);
-        System.out.println("randomPlaylistLength = " + this.randomPlaylistLength + "\n");
     }
 
     /**
@@ -70,18 +65,11 @@ public class MusicOrganizer {
                 while((line = br.readLine()) != null) {
                     Song song = parseSong(line);
                     if (song != null) {
-                        if((sortBy.equalsIgnoreCase("genre") || sortBy.equalsIgnoreCase("album") ||
-                                sortBy.equalsIgnoreCase("artist")) && randomPlaylistLength == 0) {
+                        if(!sortBy.equalsIgnoreCase("song") && !sortBy.equalsIgnoreCase("time")) {
                             // Songs must be grouped by album prior to sorting.
                             unnamedAlbumCount = addSongToAlbums(song, unnamedAlbumCount);
-                        } else if((sortBy.equalsIgnoreCase("song") || sortBy.equalsIgnoreCase("time")) &&
-                                randomPlaylistLength > 0) {
+                        } else {
                             // Pure chaos -- no need to organize songs by album.
-                            unsortedSongs.add(song);
-                        } else if((sortBy.equalsIgnoreCase("genre") || sortBy.equalsIgnoreCase("album") ||
-                                sortBy.equalsIgnoreCase("artist")) && randomPlaylistLength > 0) {
-                            // Add song to album map and unsorted song list.
-                            unnamedAlbumCount = addSongToAlbums(song, unnamedAlbumCount);
                             unsortedSongs.add(song);
                         }
                         songCount++;
@@ -89,11 +77,6 @@ public class MusicOrganizer {
                 }
             } catch (Exception e) { // Could be FileNotFoundException or IOException.
                 throw new IllegalArgumentException("Unable to open file " + inputFileName + ".");
-            }
-            if(randomPlaylistLength > songCount) {
-                System.out.println("Requested random playlist length of " + randomPlaylistLength +
-                        " exceeds length of input song list. Random playlist will not be generated.");
-                randomPlaylistLength = 0;
             }
         } else {
             throw new IllegalArgumentException("Unable to read file " + inputFileName + ".");
@@ -222,18 +205,14 @@ public class MusicOrganizer {
                 break;
             }
         }
-
-        if(randomPlaylistLength > 0) {
-            // createAndAppendRandomSongPlaylist();
-        }
         printAllSongsToConsole(); // debug.
     }
 
     /**
-     * Print the sorted songs to output file by genre block (plus random playlist if requested).
+     * Print the sorted songs to output file by genre block.
      */
     public void printSongsToOutputFile() {
-        // todo: Remember to split song list into genre blocks, including the random playlist (if it exists).
+
     }
 
     /**

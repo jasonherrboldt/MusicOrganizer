@@ -1,8 +1,6 @@
 package com.jason;
 
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileReader;
 
 /**
  * Main engine.
@@ -19,25 +17,22 @@ public class Main {
     output_filename     the desired name of the output file (no path = current path)
     -sortby             valid arguments are genre, artist, album, song, and time (can only be one)
     -sortorder          valid arguments are ascending and descending (can only be one)
-    -random             the length of the random playlist to print
 
     e.g.
-    input_file.txt output_file.txt -sortby album -sortorder descending -random 21
+    input_file.txt output_file.txt -sortby album -sortorder descending
 
      */
     public static void main(String[] args) {
 
         // Fail if the wrong number of command line arguments are received.
-        if(args.length != 2 && args.length != 4 && args.length != 6 && args.length != 8) {
-            throw new IllegalArgumentException("Invalid number of arguments received. Args length must be 2, 4, 6, " +
-                    "or 8.");
+        if(args.length != 2 && args.length != 4 && args.length != 6) {
+            throw new IllegalArgumentException("Invalid number of arguments received. Args length must be 2, 4, or 6.");
         }
 
         String inputFileName = args[0];
         String outputFileName = args[1];
         String sortBy = "genre";
         String sortOrder = "ascending";
-        int randomPlaylistLength = 0;
 
         for (int i = 0; i < args.length; i++) {
             switch (args[i]) {
@@ -61,24 +56,11 @@ public class Main {
                     }
                     break;
                 }
-                case "-random": {
-                    testArg(args, i);
-                    try {
-                        randomPlaylistLength = Integer.parseInt(args[i + 1]);
-                    } catch (NumberFormatException e) {
-                        throw new IllegalArgumentException("Illegal argument: " + args[i + 1] + ". Must be an integer.");
-                    }
-                    if(randomPlaylistLength < 1) {
-                        throw new IllegalArgumentException("Illegal argument: " + args[i + 1] + ". Must be a positive " +
-                                "integer.");
-                    }
-                    break;
-                }
             }
         }
 
         testInputFile(inputFileName);
-        MusicOrganizer mo = new MusicOrganizer(inputFileName, outputFileName, sortBy, sortOrder, randomPlaylistLength);
+        MusicOrganizer mo = new MusicOrganizer(inputFileName, outputFileName, sortBy, sortOrder);
         mo.readSongsIntoMemory();
         mo.sortSongs();
         mo.printSongsToOutputFile();
