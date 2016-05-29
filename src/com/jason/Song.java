@@ -44,14 +44,14 @@ public class Song {
         if(albumTrackNumber != -1) {
             albumTrackNumberStr = Integer.toString(albumTrackNumber);
         }
-
+        
         switch (sortBy) {
             case "genre": {
-                return "genre: " + genre + " | artist: " + artist + " | song: " + songTitle + " | album: "
-                        + albumName + " | album track #: " + albumTrackNumberStr + " | time: " + songLength;
+                return "genre: " + genre + " | artist: " + artist + " | album: " + albumName + " | song: "
+                        + songTitle + " | album track #: " + albumTrackNumberStr + " | time: " + songLength;
             }
             case "artist": {
-                return "artist: " + artist + " | song: " + songTitle + " | album: " + albumName + " | album track #: " +
+                return "artist: " + artist + " | album: " + albumName + " | song: " + songTitle + " | album track #: " +
                         albumTrackNumberStr + " | time: " + songLength + " | genre: " + genre;
             }
             case "album": {

@@ -82,7 +82,7 @@ public class MusicOrganizer {
         if(song != null) {
             String albumName = song.getAlbumName();
             if(albumName.equals("")) {
-                albumName = "Unnamed Album # " + String.valueOf(unnamedAlbumCount);
+                albumName = "zzz - Unnamed Album # " + String.valueOf(unnamedAlbumCount);
                 unnamedAlbumCount++;
             }
             if(albums.containsKey(albumName)) {

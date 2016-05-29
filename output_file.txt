@@ -1,120 +1,120 @@
-genre: '80s | artist: Hall & Oates | song: Kiss On My List | album: The Best Of Hall & Oates | album track #: 1 | time: 234
-genre: '80s | artist: Hall & Oates | song: You Make My Dreams | album: The Best Of Hall & Oates | album track #: 2 | time: 187
-genre: '80s | artist: Hall & Oates | song: Private Eyes | album: The Best Of Hall & Oates | album track #: 3 | time: 217
-genre: '80s | artist: Hall & Oates | song: I Can't Go for That (No Can Co) (Extended Edit) | album: The Best Of Hall & Oates | album track #: 4 | time: 321
-genre: '80s | artist: Hall & Oates | song: Your Imagination (Extended Edit) | album: The Best Of Hall & Oates | album track #: 5 | time: 308
-genre: '80s | artist: Hall & Oates | song: Maneater | album: The Best Of Hall & Oates | album track #: 6 | time: 264
-genre: '80s | artist: Hall & Oates | song: Family Man | album: The Best Of Hall & Oates | album track #: 7 | time: 207
-genre: '80s | artist: Hall & Oates | song: Say It Isn't So | album: The Best Of Hall & Oates | album track #: 8 | time: 257
-genre: '80s | artist: Hall & Oates | song: Adult Education | album: The Best Of Hall & Oates | album track #: 9 | time: 241
-genre: '80s | artist: Hall & Oates | song: Out Of Touch | album: The Best Of Hall & Oates | album track #: 10 | time: 248
-genre: '80s | artist: Hall & Oates | song: Some Things Are Better Left Unsaid | album: The Best Of Hall & Oates | album track #: 11 | time: 325
-genre: '80s | artist: Heart | song: Never | album:  | album track #: 4 | time: 243
-genre: '80s | artist: INXS | song: Need You Tonight | album:  | album track #: 4 | time: 190
-genre: '80s | artist: Madonna | song: Like A Virgin | album:  | album track #:  | time: 191
-genre: '80s | artist: Michael Sembello | song: Maniac | album:  | album track #: 6 | time: 244
-genre: '80s | artist: Motels | song: Only The Lonely | album:  | album track #:  | time: 194
-genre: '80s | artist: Pet Shop Boys | song: Suburbia | album:  | album track #: 4 | time: 244
-genre: '80s | artist: Peter Schilling | song: Major Tom | album:  | album track #:  | time: 240
-genre: '80s | artist: Prince & The Revolution | song: Delirious | album:  | album track #: 3 | time: 240
-genre: '80s | artist: Rockwell | song: SomebodyÂ’s Watching Me | album:  | album track #: 5 | time: 241
-genre: '80s | artist: Sheena Easton | song: Strut | album:  | album track #:  | time: 240
-genre: '80s | artist: Survivor | song: Eye of the Tiger | album:  | album track #:  | time: 243
-genre: '80s | artist: The Police | song: Don't Stand So Close To Me | album:  | album track #:  | time: 241
-genre: '80s | artist: The Tubes | song: She's A Beauty | album:  | album track #: 15 | time: 241
-genre: '80s | artist: Toni Basil | song: Mickey | album:  | album track #:  | time: 242
-genre: '80s | artist: Van Halen | song: Jump | album:  | album track #:  | time: 241
-genre: Classic Rock | artist: Steely Dan | song: Black Cow | album: Aja | album track #: 1 | time: 308
-genre: Classic Rock | artist: Steely Dan | song: Aja | album: Aja | album track #: 2 | time: 476
-genre: Classic Rock | artist: Steely Dan | song: Deacon Blues | album: Aja | album track #: 3 | time: 453
-genre: Classic Rock | artist: Steely Dan | song: Peg | album: Aja | album track #: 4 | time: 235
-genre: Classic Rock | artist: Steely Dan | song: Home At Last | album: Aja | album track #: 5 | time: 332
-genre: Classic Rock | artist: Steely Dan | song: I Got The News | album: Aja | album track #: 6 | time: 304
-genre: Classic Rock | artist: Steely Dan | song: Josie | album: Aja | album track #: 7 | time: 271
-genre: Death Metal | artist: Hour Of Penance | song: Deprave to Redeem | album: Sedition | album track #: 8 | time: 242
-genre: Death Metal | artist: Inanimate Existence | song: Dharmakaya | album: Liberation Through Hearing | album track #: 1 | time: 240
-genre: Death Metal | artist: Inanimate Existence | song: Paths to Enlightenment | album: Liberation Through Hearing | album track #: 4 | time: 241
-genre: Death Metal | artist: Inanimate Existence | song: Sulphuric Euphoria | album: Liberation Through Hearing | album track #: 8 | time: 243
-genre: Death Metal | artist: Katalepsy | song: Gore Conspiracy | album: Autopsychosis | album track #: 7 | time: 241
-genre: Death Metal | artist: Katalepsy | song: Number Of Death (13) | album: Triumph Of Evilution | album track #: 4 | time: 244
-genre: Death Metal | artist: Necrophagist | song: Ignominious & Pale | album: Epitaph | album track #: 3 | time: 241
-genre: Death Metal | artist: Putrid Pile | song: God Of Degradation | album: House Of Dementia | album track #: 4 | time: 241
-genre: Death Metal | artist: Suffocation | song: My Demise | album: Pinnacle Of Bedlam | album track #: 7 | time: 244
-genre: Electronic | artist: 808 State | song: Kinky National | album: 808 Utd. State 90 | album track #: 4 | time: 240
-genre: Electronic | artist: 808 State | song: Leo Leo | album: Ex:El | album track #: 3 | time: 241
-genre: Electronic | artist: 808 State | song: E Talk | album: Newbuild | album track #: 6 | time: 241
-genre: Electronic | artist: Pomo | song: How I Feel | album: The Other Day | album track #: 6 | time: 189
-genre: Electronic | artist: Pomo | song: Aerobix | album: The Other Day | album track #: 15 | time: 243
-genre: Electronic | artist: Q-Chastic | song: untitled #3 | album: Q-Chastic EP | album track #: 3 | time: 243
-genre: Electronic | artist: Rockwell | song: Faces (feat. Lauren LÂ’aimant) | album: Obsolete Medium | album track #: 2 | time: 244
-genre: Electronic | artist: Roy Davis Jr. & Jay Juniel | song: Transitions | album: Roy Davis Jr DJ Mix | album track #: 1 | time: 243
-genre: Electronic | artist: Squarepusher | song: The Coathanger | album: Just A Souvenir | album track #: 2 | time: 243
-genre: Electronic | artist: Squarepusher | song: Planet Gear | album: Just A Souvenir | album track #: 8 | time: 242
-genre: Electronic | artist: Squarepusher | song: Red In Blue | album: Ufabulum | album track #: 5 | time: 191
-genre: Electronic | artist: Teebs | song: Burner | album: Ardour | album track #: 6 | time: 192
-genre: Electronic | artist: Teebs | song: Wind Loop | album: Ardour | album track #: 7 | time: 194
-genre: Electronic | artist: Teebs | song: My Whole Life | album: Ardour | album track #: 14 | time: 191
-genre: Electronic | artist: Tensnake | song: Holla | album: Glow | album track #: 10 | time: 189
-genre: Electronic | artist: Total Science | song: All I Need | album: Mars Needs Total Science | album track #: 12 | time: 244
-genre: Electronic | artist: Unai | song: Loving That Lost Feeling | album: Lost On Arrival | album track #: 11 | time: 242
-genre: Electronic | artist: Universal Indicator | song: Wayne's Tantrum | album: Yellow | album track #: 2 | time: 192
-genre: Hip Hop / R&B | artist: Fwdslxsh | song: Fall | album: The Fall EP | album track #: 1 | time: 192
-genre: Hip Hop / R&B | artist: Fwdslxsh | song: High Tide (Reprise) | album: The Fall EP | album track #: 6 | time: 193
-genre: Hip Hop / R&B | artist: Kaytranada | song: Killa Cats | album: Kaytra Todo | album track #: 1 | time: 191
-genre: Hip Hop / R&B | artist: Lone | song: Meeker Warm Energy | album: Reality Testing | album track #: 3 | time: 240
-genre: Hip Hop / R&B | artist: Machinedrum | song: Understand (Feat. DJ Rashad & Nick Hook) | album: Movin' Forward: A Tribute To DJ Rashad | album track #: 1 | time: 241
-genre: Hip Hop / R&B | artist: Machinedrum | song: TMPL | album: Room(s) Extended | album track #: 3 | time: 240
-genre: Hip Hop / R&B | artist: Mike Gao | song: Ramen Hotline (feat. eLan Go Yama & Elaquent) | album: Migamo | album track #: 11 | time: 192
-genre: Hip Hop / R&B | artist: Missy Elliott | song: WTF (Where They From) [feat. Pharrell Williams] | album: WTF (Where They From) [feat. Pharrell Williams] - Single | album track #: 1 | time: 192
-genre: Hip Hop / R&B | artist: Ohbliv | song: bahdiyap | album: HW&W Vol 1 | album track #: 10 | time: 189
-genre: Hip Hop / R&B | artist: ohbliv | song: Like I Light It | album: UP | album track #: 15 | time: 191
-genre: Hip Hop / R&B | artist: Stwo | song: Liz (Arnold x Lil Texas Remix) | album: Liz | album track #: 3 | time: 241
-genre: Hip Hop / R&B | artist: Suff Daddy & Ta-Ku | song: Suff Daddy - Smile | album: Bricks & Mortar | album track #: 2 | time: 191
-genre: Hip Hop / R&B | artist: Ta-ku | song: Poath | album: Latenyc | album track #:  | time: 244
-genre: Hip Hop / R&B | artist: Ta-ku | song: Love Lost | album: Songs To Break Up To | album track #: 4 | time: 242
-genre: Hip Hop / R&B | artist: TEK.LUN | song: Live Out Your Life | album: The Crusade EP | album track #: 8 | time: 193
-genre: Hip Hop / R&B | artist: The Host | song: Summer Solstice At Cape Canaveral | album: The Host | album track #: 10 | time: 193
-genre: Jazz | artist: Miles Davis | song: Four | album: Blue Haze | album track #: 2 | time: 243
-genre: Latin | artist: Antonio Carlos Jobim | song: Sabia | album: Stone Flower | album track #: 9 | time: 240
-genre: Latin | artist: AntÃ´nio Carlos Jobim | song: Antigua | album: Wave | album track #: 9 | time: 190
-genre: Latin | artist: Cal Tjader  | song: Maramoor Mambo | album: Soul Sauce | album track #: 5 | time: 243
-genre: Latin | artist: Cal Tjader  | song: Spring Is Here | album: Soul Sauce | album track #: 8 | time: 243
-genre: Latin | artist: Elis Regina | song: Bala Com Bala | album:  | album track #: 5 | time: 192
-genre: Latin | artist: Elis Regina E Tom Jobim | song: Useless Landscape [Inutil Paisagem] | album: Bossa Nova - Original Motion Picture Soundtrack | album track #: 11 | time: 189
-genre: Latin | artist: Paula Morelenbaum | song: Tomara | album: Berimbaum | album track #: 1 | time: 243
-genre: Latin | artist: Sabrina Malheiros | song: Vou Voar | album: New Morning | album track #: 11 | time: 242
-genre: Latin | artist: Stan Getz & JoÃ£o Gilberto | song: Desafinado | album: Getz/Gilberto | album track #: 4 | time: 244
-genre: Latin | artist: Toco | song: Barracao | album: Outro Lugar | album track #: 7 | time: 189
-genre: Punk & Alternative | artist: Sonic Youth | song: I'm Insane | album: Bad Moon Rising | album track #: 6 | time: 243
-genre: Punk & Alternative | artist: Sonic Youth | song: Inhuman | album: Confusion Is Sex / Kill Yr Idols | album track #: 5 | time: 242
-genre: Punk & Alternative | artist: Sonic Youth | song: Jc | album: Dirty | album track #: 13 | time: 243
-genre: Punk & Alternative | artist: Sonic Youth | song: Marilyn Moore | album: EVOL  | album track #: 8 | time: 244
-genre: Punk & Alternative | artist: Sonic Youth | song: Mary-Christ | album: Goo | album track #: 3 | time: 191
-genre: Punk & Alternative | artist: Sonic Youth | song: She Is Not Alone | album: Sonic Youth EP | album track #: 3 | time: 242
-genre: Punk & Alternative | artist: THE SOFT MOON | song: Dead Love | album: The Soft Moon | album track #: 5 | time: 244
-genre: Punk & Alternative | artist: THE SOFT MOON | song: Circles | album: The Soft Moon | album track #:  | time: 242
-genre: Punk & Alternative | artist: THE SOFT MOON | song: Parallels | album: The Soft Moon | album track #:  | time: 190
-genre: Punk & Alternative | artist: THE SOFT MOON | song: Insides | album: Zeros | album track #: 4 | time: 241
-genre: Punk & Alternative | artist: This Mortal Coil | song: You And Your Sister | album: Blood | album track #: 6 | time: 194
-genre: Punk & Alternative | artist: This Mortal Coil | song: Several Times | album: Blood | album track #: 11 | time: 192
-genre: Punk & Alternative | artist: This Mortal Coil | song: (Nothing But) Blood | album: Blood | album track #: 21 | time: 243
-genre: Punk & Alternative | artist: This Mortal Coil | song: Thais (2) | album: Filigree & Shadow | album track #: 25 | time: 193
-genre: Punk & Alternative | artist: Tones On Tail | song: There's Only One | album: Tones On Tail | album track #: 5 | time: 241
-genre: R&B | artist: Atlantic Starr | song: Touch A Four Leaf Clover | album:  | album track #:  | time: 241
-genre: R&B | artist: Earth Wind & Fire | song: Got To Get You Into My Life | album: The Best Of Vol. 1 | album track #: 1 | time: 243
-genre: R&B | artist: Inner City | song: Good Life | album:  | album track #:  | time: 244
-genre: R&B | artist: Patrice Rushen | song: Forget Me Nots | album:  | album track #:  | time: 242
-genre: R&B | artist: Prince | song: Delirious | album: 1999 | album track #: 3 | time: 240
-genre: R&B | artist: Prince | song: Something In The Water (Does Not Compute) | album: 1999 | album track #: 7 | time: 242
-genre: R&B | artist: Prince | song: The Ballad Of Dorothy Parker | album: Sign O' The Times [Disc 1] | album track #: 4 | time: 241
-genre: R&B | artist: Prince | song: Strange Relationship | album: Sign O' The Times [Disc 2] | album track #: 3 | time: 241
-genre: R&B | artist: Prince & The Revolution | song: Anotherloverholenyohead | album: Parade | album track #: 11 | time: 240
-genre: R&B | artist: Sade | song: Paradise | album: Stronger Than Pride | album track #: 2 | time: 242
-genre: R&B | artist: Sade | song: Clean Heart | album: Stronger Than Pride | album track #: 7 | time: 240
-genre: Rock | artist: Doves | song: Ambition | album: Some Cities | album track #: 11 | time: 240
-genre: Rock | artist: Fleetwood Mac | song: Don't stop | album: Rumours | album track #: 4 | time: 193
-genre: Rock | artist: Frozen Ghost | song: Time is the Answer | album: Frozen Ghost | album track #: 16 | time: 242
-genre: Rock | artist: Ladyhawke | song: Love Don't Live Here | album: Ladyhawke | album track #: 6 | time: 242
-genre: Rock | artist: Ladyhawke | song: Morning Dreams | album: Ladyhawke | album track #: 12 | time: 240
-genre: Rock | artist: Missing Persons | song: Walking in L.A. | album: Spring Session M | album track #: 5 | time: 240
-genre: Rock | artist: The Motels | song: Art Fails | album: All Four One  | album track #: 4 | time: 191
+genre: 80s | artist: Hall & Oates | album: The Best Of Hall & Oates | song: Kiss On My List | album track #: 1 | time: 234
+genre: 80s | artist: Hall & Oates | album: The Best Of Hall & Oates | song: You Make My Dreams | album track #: 2 | time: 187
+genre: 80s | artist: Hall & Oates | album: The Best Of Hall & Oates | song: Private Eyes | album track #: 3 | time: 217
+genre: 80s | artist: Hall & Oates | album: The Best Of Hall & Oates | song: I Can't Go for That (No Can Co) (Extended Edit) | album track #: 4 | time: 321
+genre: 80s | artist: Hall & Oates | album: The Best Of Hall & Oates | song: Your Imagination (Extended Edit) | album track #: 5 | time: 308
+genre: 80s | artist: Hall & Oates | album: The Best Of Hall & Oates | song: Maneater | album track #: 6 | time: 264
+genre: 80s | artist: Hall & Oates | album: The Best Of Hall & Oates | song: Family Man | album track #: 7 | time: 207
+genre: 80s | artist: Hall & Oates | album: The Best Of Hall & Oates | song: Say It Isn't So | album track #: 8 | time: 257
+genre: 80s | artist: Hall & Oates | album: The Best Of Hall & Oates | song: Adult Education | album track #: 9 | time: 241
+genre: 80s | artist: Hall & Oates | album: The Best Of Hall & Oates | song: Out Of Touch | album track #: 10 | time: 248
+genre: 80s | artist: Hall & Oates | album: The Best Of Hall & Oates | song: Some Things Are Better Left Unsaid | album track #: 11 | time: 325
+genre: 80s | artist: Heart | album:  | song: Never | album track #: 4 | time: 243
+genre: 80s | artist: INXS | album:  | song: Need You Tonight | album track #: 4 | time: 190
+genre: 80s | artist: Madonna | album:  | song: Like A Virgin | album track #:  | time: 191
+genre: 80s | artist: Michael Sembello | album:  | song: Maniac | album track #: 6 | time: 244
+genre: 80s | artist: Motels | album:  | song: Only The Lonely | album track #:  | time: 194
+genre: 80s | artist: Pet Shop Boys | album:  | song: Suburbia | album track #: 4 | time: 244
+genre: 80s | artist: Peter Schilling | album:  | song: Major Tom | album track #:  | time: 240
+genre: 80s | artist: Prince & The Revolution | album:  | song: Delirious | album track #: 3 | time: 240
+genre: 80s | artist: Rockwell | album:  | song: SomebodyÂ’s Watching Me | album track #: 5 | time: 241
+genre: 80s | artist: Sheena Easton | album:  | song: Strut | album track #:  | time: 240
+genre: 80s | artist: Survivor | album:  | song: Eye of the Tiger | album track #:  | time: 243
+genre: 80s | artist: The Police | album:  | song: Don't Stand So Close To Me | album track #:  | time: 241
+genre: 80s | artist: The Tubes | album:  | song: She's A Beauty | album track #: 15 | time: 241
+genre: 80s | artist: Toni Basil | album:  | song: Mickey | album track #:  | time: 242
+genre: 80s | artist: Van Halen | album:  | song: Jump | album track #:  | time: 241
+genre: Classic Rock | artist: Steely Dan | album: Aja | song: Black Cow | album track #: 1 | time: 308
+genre: Classic Rock | artist: Steely Dan | album: Aja | song: Aja | album track #: 2 | time: 476
+genre: Classic Rock | artist: Steely Dan | album: Aja | song: Deacon Blues | album track #: 3 | time: 453
+genre: Classic Rock | artist: Steely Dan | album: Aja | song: Peg | album track #: 4 | time: 235
+genre: Classic Rock | artist: Steely Dan | album: Aja | song: Home At Last | album track #: 5 | time: 332
+genre: Classic Rock | artist: Steely Dan | album: Aja | song: I Got The News | album track #: 6 | time: 304
+genre: Classic Rock | artist: Steely Dan | album: Aja | song: Josie | album track #: 7 | time: 271
+genre: Death Metal | artist: Hour Of Penance | album: Sedition | song: Deprave to Redeem | album track #: 8 | time: 242
+genre: Death Metal | artist: Inanimate Existence | album: Liberation Through Hearing | song: Dharmakaya | album track #: 1 | time: 240
+genre: Death Metal | artist: Inanimate Existence | album: Liberation Through Hearing | song: Paths to Enlightenment | album track #: 4 | time: 241
+genre: Death Metal | artist: Inanimate Existence | album: Liberation Through Hearing | song: Sulphuric Euphoria | album track #: 8 | time: 243
+genre: Death Metal | artist: Katalepsy | album: Autopsychosis | song: Gore Conspiracy | album track #: 7 | time: 241
+genre: Death Metal | artist: Katalepsy | album: Triumph Of Evilution | song: Number Of Death (13) | album track #: 4 | time: 244
+genre: Death Metal | artist: Necrophagist | album: Epitaph | song: Ignominious & Pale | album track #: 3 | time: 241
+genre: Death Metal | artist: Putrid Pile | album: House Of Dementia | song: God Of Degradation | album track #: 4 | time: 241
+genre: Death Metal | artist: Suffocation | album: Pinnacle Of Bedlam | song: My Demise | album track #: 7 | time: 244
+genre: Electronic | artist: 808 State | album: 808 Utd. State 90 | song: Kinky National | album track #: 4 | time: 240
+genre: Electronic | artist: 808 State | album: Ex:El | song: Leo Leo | album track #: 3 | time: 241
+genre: Electronic | artist: 808 State | album: Newbuild | song: E Talk | album track #: 6 | time: 241
+genre: Electronic | artist: Pomo | album: The Other Day | song: How I Feel | album track #: 6 | time: 189
+genre: Electronic | artist: Pomo | album: The Other Day | song: Aerobix | album track #: 15 | time: 243
+genre: Electronic | artist: Q-Chastic | album: Q-Chastic EP | song: untitled #3 | album track #: 3 | time: 243
+genre: Electronic | artist: Rockwell | album: Obsolete Medium | song: Faces (feat. Lauren LÂ’aimant) | album track #: 2 | time: 244
+genre: Electronic | artist: Roy Davis Jr. & Jay Juniel | album: Roy Davis Jr DJ Mix | song: Transitions | album track #: 1 | time: 243
+genre: Electronic | artist: Squarepusher | album: Just A Souvenir | song: The Coathanger | album track #: 2 | time: 243
+genre: Electronic | artist: Squarepusher | album: Just A Souvenir | song: Planet Gear | album track #: 8 | time: 242
+genre: Electronic | artist: Squarepusher | album: Ufabulum | song: Red In Blue | album track #: 5 | time: 191
+genre: Electronic | artist: Teebs | album: Ardour | song: Burner | album track #: 6 | time: 192
+genre: Electronic | artist: Teebs | album: Ardour | song: Wind Loop | album track #: 7 | time: 194
+genre: Electronic | artist: Teebs | album: Ardour | song: My Whole Life | album track #: 14 | time: 191
+genre: Electronic | artist: Tensnake | album: Glow | song: Holla | album track #: 10 | time: 189
+genre: Electronic | artist: Total Science | album: Mars Needs Total Science | song: All I Need | album track #: 12 | time: 244
+genre: Electronic | artist: Unai | album: Lost On Arrival | song: Loving That Lost Feeling | album track #: 11 | time: 242
+genre: Electronic | artist: Universal Indicator | album: Yellow | song: Wayne's Tantrum | album track #: 2 | time: 192
+genre: Hip Hop / R&B | artist: Fwdslxsh | album: The Fall EP | song: Fall | album track #: 1 | time: 192
+genre: Hip Hop / R&B | artist: Fwdslxsh | album: The Fall EP | song: High Tide (Reprise) | album track #: 6 | time: 193
+genre: Hip Hop / R&B | artist: Kaytranada | album: Kaytra Todo | song: Killa Cats | album track #: 1 | time: 191
+genre: Hip Hop / R&B | artist: Lone | album: Reality Testing | song: Meeker Warm Energy | album track #: 3 | time: 240
+genre: Hip Hop / R&B | artist: Machinedrum | album: Movin' Forward: A Tribute To DJ Rashad | song: Understand (Feat. DJ Rashad & Nick Hook) | album track #: 1 | time: 241
+genre: Hip Hop / R&B | artist: Machinedrum | album: Room(s) Extended | song: TMPL | album track #: 3 | time: 240
+genre: Hip Hop / R&B | artist: Mike Gao | album: Migamo | song: Ramen Hotline (feat. eLan Go Yama & Elaquent) | album track #: 11 | time: 192
+genre: Hip Hop / R&B | artist: Missy Elliott | album: WTF (Where They From) [feat. Pharrell Williams] - Single | song: WTF (Where They From) [feat. Pharrell Williams] | album track #: 1 | time: 192
+genre: Hip Hop / R&B | artist: Ohbliv | album: HW&W Vol 1 | song: bahdiyap | album track #: 10 | time: 189
+genre: Hip Hop / R&B | artist: ohbliv | album: UP | song: Like I Light It | album track #: 15 | time: 191
+genre: Hip Hop / R&B | artist: Stwo | album: Liz | song: Liz (Arnold x Lil Texas Remix) | album track #: 3 | time: 241
+genre: Hip Hop / R&B | artist: Suff Daddy & Ta-Ku | album: Bricks & Mortar | song: Suff Daddy - Smile | album track #: 2 | time: 191
+genre: Hip Hop / R&B | artist: Ta-ku | album: Latenyc | song: Poath | album track #:  | time: 244
+genre: Hip Hop / R&B | artist: Ta-ku | album: Songs To Break Up To | song: Love Lost | album track #: 4 | time: 242
+genre: Hip Hop / R&B | artist: TEK.LUN | album: The Crusade EP | song: Live Out Your Life | album track #: 8 | time: 193
+genre: Hip Hop / R&B | artist: The Host | album: The Host | song: Summer Solstice At Cape Canaveral | album track #: 10 | time: 193
+genre: Jazz | artist: Miles Davis | album: Blue Haze | song: Four | album track #: 2 | time: 243
+genre: Latin | artist: Antonio Carlos Jobim | album: Stone Flower | song: Sabia | album track #: 9 | time: 240
+genre: Latin | artist: AntÃ´nio Carlos Jobim | album: Wave | song: Antigua | album track #: 9 | time: 190
+genre: Latin | artist: Cal Tjader  | album: Soul Sauce | song: Maramoor Mambo | album track #: 5 | time: 243
+genre: Latin | artist: Cal Tjader  | album: Soul Sauce | song: Spring Is Here | album track #: 8 | time: 243
+genre: Latin | artist: Elis Regina | album:  | song: Bala Com Bala | album track #: 5 | time: 192
+genre: Latin | artist: Elis Regina E Tom Jobim | album: Bossa Nova - Original Motion Picture Soundtrack | song: Useless Landscape [Inutil Paisagem] | album track #: 11 | time: 189
+genre: Latin | artist: Paula Morelenbaum | album: Berimbaum | song: Tomara | album track #: 1 | time: 243
+genre: Latin | artist: Sabrina Malheiros | album: New Morning | song: Vou Voar | album track #: 11 | time: 242
+genre: Latin | artist: Stan Getz & JoÃ£o Gilberto | album: Getz/Gilberto | song: Desafinado | album track #: 4 | time: 244
+genre: Latin | artist: Toco | album: Outro Lugar | song: Barracao | album track #: 7 | time: 189
+genre: Punk & Alternative | artist: Sonic Youth | album: Bad Moon Rising | song: I'm Insane | album track #: 6 | time: 243
+genre: Punk & Alternative | artist: Sonic Youth | album: Confusion Is Sex / Kill Yr Idols | song: Inhuman | album track #: 5 | time: 242
+genre: Punk & Alternative | artist: Sonic Youth | album: Dirty | song: Jc | album track #: 13 | time: 243
+genre: Punk & Alternative | artist: Sonic Youth | album: EVOL  | song: Marilyn Moore | album track #: 8 | time: 244
+genre: Punk & Alternative | artist: Sonic Youth | album: Goo | song: Mary-Christ | album track #: 3 | time: 191
+genre: Punk & Alternative | artist: Sonic Youth | album: Sonic Youth EP | song: She Is Not Alone | album track #: 3 | time: 242
+genre: Punk & Alternative | artist: THE SOFT MOON | album: The Soft Moon | song: Dead Love | album track #: 5 | time: 244
+genre: Punk & Alternative | artist: THE SOFT MOON | album: The Soft Moon | song: Circles | album track #:  | time: 242
+genre: Punk & Alternative | artist: THE SOFT MOON | album: The Soft Moon | song: Parallels | album track #:  | time: 190
+genre: Punk & Alternative | artist: THE SOFT MOON | album: Zeros | song: Insides | album track #: 4 | time: 241
+genre: Punk & Alternative | artist: This Mortal Coil | album: Blood | song: You And Your Sister | album track #: 6 | time: 194
+genre: Punk & Alternative | artist: This Mortal Coil | album: Blood | song: Several Times | album track #: 11 | time: 192
+genre: Punk & Alternative | artist: This Mortal Coil | album: Blood | song: (Nothing But) Blood | album track #: 21 | time: 243
+genre: Punk & Alternative | artist: This Mortal Coil | album: Filigree & Shadow | song: Thais (2) | album track #: 25 | time: 193
+genre: Punk & Alternative | artist: Tones On Tail | album: Tones On Tail | song: There's Only One | album track #: 5 | time: 241
+genre: R&B | artist: Atlantic Starr | album:  | song: Touch A Four Leaf Clover | album track #:  | time: 241
+genre: R&B | artist: Earth Wind & Fire | album: The Best Of Vol. 1 | song: Got To Get You Into My Life | album track #: 1 | time: 243
+genre: R&B | artist: Inner City | album:  | song: Good Life | album track #:  | time: 244
+genre: R&B | artist: Patrice Rushen | album:  | song: Forget Me Nots | album track #:  | time: 242
+genre: R&B | artist: Prince | album: 1999 | song: Delirious | album track #: 3 | time: 240
+genre: R&B | artist: Prince | album: 1999 | song: Something In The Water (Does Not Compute) | album track #: 7 | time: 242
+genre: R&B | artist: Prince | album: Sign O' The Times [Disc 1] | song: The Ballad Of Dorothy Parker | album track #: 4 | time: 241
+genre: R&B | artist: Prince | album: Sign O' The Times [Disc 2] | song: Strange Relationship | album track #: 3 | time: 241
+genre: R&B | artist: Prince & The Revolution | album: Parade | song: Anotherloverholenyohead | album track #: 11 | time: 240
+genre: R&B | artist: Sade | album: Stronger Than Pride | song: Paradise | album track #: 2 | time: 242
+genre: R&B | artist: Sade | album: Stronger Than Pride | song: Clean Heart | album track #: 7 | time: 240
+genre: Rock | artist: Doves | album: Some Cities | song: Ambition | album track #: 11 | time: 240
+genre: Rock | artist: Fleetwood Mac | album: Rumours | song: Don't stop | album track #: 4 | time: 193
+genre: Rock | artist: Frozen Ghost | album: Frozen Ghost | song: Time is the Answer | album track #: 16 | time: 242
+genre: Rock | artist: Ladyhawke | album: Ladyhawke | song: Love Don't Live Here | album track #: 6 | time: 242
+genre: Rock | artist: Ladyhawke | album: Ladyhawke | song: Morning Dreams | album track #: 12 | time: 240
+genre: Rock | artist: Missing Persons | album: Spring Session M | song: Walking in L.A. | album track #: 5 | time: 240
+genre: Rock | artist: The Motels | album: All Four One  | song: Art Fails | album track #: 4 | time: 191
