@@ -216,7 +216,7 @@ public class MusicOrganizer {
                 break;
             }
         }
-        printAllSongsToConsole(); // debug.
+        // printAllSongsToConsole(); // debug.
     }
 
     /**
