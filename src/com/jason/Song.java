@@ -33,15 +33,49 @@ public class Song {
         this.albumTrackNumber = albumTrack;
     }
 
-    @Override
-    public String toString() {
+    /**
+     * Print a song's attributes to a string.
+     *
+     * @param sortBy    Decides the order in which the attributes will be printed
+     * @return          The printed string.
+     */
+    public String printSong(String sortBy) {
+        String albumTrackNumberStr = "";
         if(albumTrackNumber != -1) {
-            return "Genre: " + genre + " | artist: " + artist + " | album name: " + albumName + " | song title: "
-                    + songTitle + " | song length: " + songLength + " | album track #: " + albumTrackNumber;
-        } else {
-            return "Genre: " + genre + " | artist: " + artist + " | album name: " + albumName + " | song title: "
-                    + songTitle + " | song length: " + songLength + " | album track #:";
+            albumTrackNumberStr = Integer.toString(albumTrackNumber);
         }
+
+        /*
+            Genre | artist | song | album | album track | time
+            Artist | song | album | album track | time | genre
+            Album | artist | song | album track | time | genre
+            Song | artist | album | genre | time | album track
+            Time | artist | song | album | genre | album track
+         */
+
+        switch (sortBy) {
+            case "genre": {
+                    return "genre: " + genre + " | artist: " + artist + " | song: " + songTitle + " | album: "
+                            + albumName + " | album track #: " + albumTrackNumberStr + " | time: " + songLength;
+            }
+            case "artist": {
+                return "artist: " + artist + " | song: " + songTitle + " | album: " + albumName + " | album track #: " +
+                        albumTrackNumberStr + " | time: " + songLength + " | genre: " + genre;
+            }
+            case "album": {
+                return "album: " + albumName + " | artist: " + artist + " | song: " + songTitle + " | album track #: " +
+                        albumTrackNumberStr + " | time: " + songLength + " | genre: " + genre;
+            }
+            case "song": {
+                return "song: " + songTitle + " | artist: " + artist + " | album: " + albumName + " | genre: " + genre +
+                        " | time: " + songLength + " | album track #: " + albumTrackNumberStr;
+            }
+            case "time": {
+                return "time: " + songLength + " | artist: " + artist + " | song: " + songTitle + " | album: " + albumName +
+                        " | genre: " + genre + " | album track #: " + albumTrackNumberStr;
+            }
+        }
+        return "";
     }
 
     /**

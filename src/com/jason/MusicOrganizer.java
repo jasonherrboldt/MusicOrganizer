@@ -3,6 +3,7 @@ package com.jason;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
+import java.io.PrintWriter;
 import java.util.*;
 
 /**
@@ -19,8 +20,8 @@ public class MusicOrganizer {
     private String sortOrder;
     private int songCount;
     private Map<String, Album> albums; // Map of album names to albums (albums may have 1...* songs).
-    private List<Album> sortedAlbums;
-    private List<Song> unsortedSongs;
+    private List<Album> sortedAlbums; // List of albums after they have been sorted (for sort by genre, artist, and album).
+    private List<Song> unsortedSongs; // List of songs with no album collections (for sort by song or time).
 
     /**
      * Public constructor.
@@ -96,13 +97,13 @@ public class MusicOrganizer {
             for(Album album : sortedAlbums) {
                 List<Song> songs = album.getSongs();
                 for (Song song : songs) {
-                    System.out.println(printCount + " | " + song.toString());
+                    System.out.println(printCount + " | " + song.printSong(sortBy));
                     printCount++;
                 }
             }
         } else {
             for(Song song : unsortedSongs) {
-                System.out.println(printCount + " | " + song.toString());
+                System.out.println(printCount + " | " + song.printSong(sortBy));
                 printCount++;
             }
         }
@@ -223,7 +224,25 @@ public class MusicOrganizer {
      * Print the sorted songs to output file by genre block.
      */
     public void printSongsToOutputFile() {
-
+        try {
+            PrintWriter writer = new PrintWriter(outputFileName, "UTF-8");
+            // writer.println("oh hai overwriting to output file."); // debug
+            if(!sortBy.equalsIgnoreCase("song") && !sortBy.equalsIgnoreCase("time")) {
+                for(Album album : sortedAlbums) {
+                    List<Song> songs = album.getSongs();
+                        for(Song song : songs) {
+                            writer.println(song.printSong(sortBy));
+                    }
+                }
+            } else {
+                for(Song song : unsortedSongs) {
+                    writer.println(song.printSong(sortBy));
+                }
+            }
+            writer.close();
+        } catch (Exception e) {
+            System.out.println("Something went wrong while trying to write to " + outputFileName + ".");
+        }
     }
 
     /**

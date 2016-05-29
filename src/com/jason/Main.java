@@ -35,7 +35,7 @@ public class Main {
         String sortOrder = "ascending";
 
         for (int i = 0; i < args.length; i++) {
-            switch (args[i]) {
+            switch(args[i]) {
                 case "-sortby": {
                     testArg(args, i);
                     sortBy = args[i + 1];
