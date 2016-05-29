@@ -44,7 +44,7 @@ public class Song {
         if(albumTrackNumber != -1) {
             albumTrackNumberStr = Integer.toString(albumTrackNumber);
         }
-        
+
         switch (sortBy) {
             case "genre": {
                 return "genre: " + genre + " | artist: " + artist + " | album: " + albumName + " | song: "

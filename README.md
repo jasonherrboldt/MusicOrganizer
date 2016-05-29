@@ -34,4 +34,4 @@ Exceptions for these cases should be logged to the console. All are fatal unless
 - unable to open input file;
 - unable to read input file.
 
-An example input file example is located in the root directory (input_file.txt). It has full albums, singles, and one or two incomplete lines that should be ignored by the program. 
+An example input file example is located in the root directory (input_file.txt). It has full albums, singles, and one or two incomplete lines that should be ignored by the program. An example output file is also available (output_file.txt), showing the same songs after being sorted ascending by genre.
