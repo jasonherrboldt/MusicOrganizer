@@ -1,6 +1,6 @@
 # MusicOrganizer
 ###Description
-This is a coding exercise I made up to sharpen and demonstrate my Java skills (written in Java 8). It's a command line driven program that reads a list of songs from a file, sorts them according to user preference, and prints the organized song list to another file.
+This is a coding exercise I made up to sharpen and demonstrate my Java skills. It was written in Java 8, and I am the only one who made commits. It's a command line driven program that reads a list of songs from a file, sorts them according to user preference, and prints the organized song list to another file.
 
 The user may elect to have the songs sorted by genre, by artist, by album, by song title, or by song length, either all ascending or all descending. (Default is ascending by genre -- see the table below.) 
 
