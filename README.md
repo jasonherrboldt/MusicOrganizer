@@ -12,7 +12,9 @@ Must be able to successfully handle compilations, i.e. songs with various artist
 
 Tracks within the same album with no track numbers should be ordered by track name. If an album has both numbered and non-numbered tracks, non-numbered tracks should always come last, either when ascending or descending.
 
-A user may specify the initial sorting, as well as the ascending / descending order. Secondary, tertiary, etc. sorting will be decided by the program. If an ascending / descending choice is not made, the default choice will be ascending. See the examples below. The first row is the default. The user may choose to sort by any row, then all other columns programatically follow as indicated by the columns. Dashes indicate that no programatic choice will be made. (These are extreme edge cases.)
+Songs with no album information should come last when sorting albums ascending, first when descending. 
+
+A user may specify the initial sorting, as well as the ascending / descending order. Secondary, tertiary, etc. sorting will be decided by the program. If an ascending / descending choice is not made, the default choice will be ascending. See the examples below. The first row is the default. The user may choose to sort by any row, then all other columns programatically follow as indicated by the columns. Dashes indicate that no programatic choice will be made. (These are extreme edge cases.) For example, the second row shows what will happen when the user elects to sort by artist. If a group of songs have the same artist, they will next be sorted by album, then album track, etc. But if the user sorts by song, it's unlikely that any two songs will have the same title. 
 
 ![alt tag](http://traffic.libsyn.com/hardcoremathuser/sorting.png)
 
