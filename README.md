@@ -1,16 +1,14 @@
 # MusicOrganizer
 ###Description
-(Under construction.) This is a coding exercise I made up to sharpen and demonstrate my Java skills (written in Java 8). It's a command line driven program that reads a list of songs from a file, sorts them according to user preference, and prints the organized song list to another file.
+This is a coding exercise I made up to sharpen and demonstrate my Java skills (written in Java 8). It's a command line driven program that reads a list of songs from a file, sorts them according to user preference, and prints the organized song list to another file.
 
 The user may elect to have the songs sorted by genre, by artist, by album, by song title, or by song length, either all ascending or all descending. (Default is ascending by genre -- see the table below.) 
 
 ###Details, Assumptions, and Requirements
 
-Albums are assumed to contain songs of the same genre. An album's genre is determined by the genre of the first song that is added to it (not necessarily the song with the lowest album track number.)
+Albums are assumed to contain songs of the same genre. An album's genre is determined by the genre of the first song that is added to it (not necessarily the song with the lowest album track number.) This is an unfortunate compromise to save hours of coding for rare edge cases.
 
 Must be able to successfully handle compilations, i.e. songs with various artist names and song titles that belong to the same album. (Does not need an album artist name -- albums with multiple artist names will default to an album artist of "Various Artists".)
-
-Songs by the same artist with no associated album should come after all other albums by the same artist, for both descending and ascending. (Only required when user elects to sort by genre and artist.)
 
 Tracks within the same album with no track numbers should be ordered by track name. If an album has both numbered and non-numbered tracks, non-numbered tracks should always come last, either when ascending or descending.
 
