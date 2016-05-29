@@ -1,9 +1,6 @@
 package com.jason;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.PrintWriter;
+import java.io.*;
 import java.util.*;
 
 /**
@@ -43,17 +40,6 @@ public class MusicOrganizer {
         } else {
             unsortedSongs = new ArrayList<>();
         }
-        // printArguments(); // debug
-    }
-
-    /**
-     * (For debug.)
-     */
-    private void printArguments() {
-        System.out.println("\ninputFileName = " + this.inputFileName);
-        System.out.println("outputFileName = " + this.outputFileName);
-        System.out.println("sortBy = " + this.sortBy);
-        System.out.println("sortOrder = " + this.sortOrder);
     }
 
     /**
@@ -84,28 +70,6 @@ public class MusicOrganizer {
             }
         } else {
             throw new IllegalArgumentException("Unable to read file " + inputFileName + ".");
-        }
-    }
-
-    /**
-     * Print every song in every album (for debug).
-     */
-    public void printAllSongsToConsole() {
-        System.out.println("\n" + songCount + " songs processed:\n");
-        int printCount = 0;
-        if(!sortBy.equalsIgnoreCase("song") && !sortBy.equalsIgnoreCase("time")) {
-            for(Album album : sortedAlbums) {
-                List<Song> songs = album.getSongs();
-                for (Song song : songs) {
-                    System.out.println(printCount + " | " + song.printSong(sortBy));
-                    printCount++;
-                }
-            }
-        } else {
-            for(Song song : unsortedSongs) {
-                System.out.println(printCount + " | " + song.printSong(sortBy));
-                printCount++;
-            }
         }
     }
 
@@ -217,7 +181,6 @@ public class MusicOrganizer {
                 break;
             }
         }
-        // printAllSongsToConsole(); // debug.
     }
 
     /**
@@ -251,9 +214,6 @@ public class MusicOrganizer {
      * @param line The line to parse.
      */
     private Song parseSong(String line) {
-        // System.out.println(line); // (debug)
-        // Hall & Oates,Adult Education,The Best Of Hall & Oates,9,'80s,241
-        // [artist], [song], [album], [album track], [genre], [time]
         String artist = "";
         String songTitle = "";
         String albumName = "";
@@ -309,19 +269,36 @@ public class MusicOrganizer {
     public List<Song> getUnsortedSongs() {
         return unsortedSongs;
     }
+
+    /**
+     * Print all the user specifications to the console (for debug).
+     */
+    private void printArgumentsToConsole() {
+        System.out.println("\ninputFileName = " + this.inputFileName);
+        System.out.println("outputFileName = " + this.outputFileName);
+        System.out.println("sortBy = " + this.sortBy);
+        System.out.println("sortOrder = " + this.sortOrder);
+    }
+
+    /**
+     * Print every song in every album to the console (for debug).
+     */
+    public void printAllSongsToConsole() {
+        System.out.println("\n" + songCount + " songs processed:\n");
+        int printCount = 0;
+        if(!sortBy.equalsIgnoreCase("song") && !sortBy.equalsIgnoreCase("time")) {
+            for(Album album : sortedAlbums) {
+                List<Song> songs = album.getSongs();
+                for (Song song : songs) {
+                    System.out.println(printCount + " | " + song.printSong(sortBy));
+                    printCount++;
+                }
+            }
+        } else {
+            for(Song song : unsortedSongs) {
+                System.out.println(printCount + " | " + song.printSong(sortBy));
+                printCount++;
+            }
+        }
+    }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

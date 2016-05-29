@@ -58,6 +58,7 @@ public class Album {
     }
 
     /**
+
      * @return The name of the album.
      */
     public String getName() {
@@ -109,22 +110,4 @@ public class Album {
     public String getGenre() {
         return genre;
     }
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

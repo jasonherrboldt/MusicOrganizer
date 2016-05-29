@@ -5,12 +5,14 @@ import java.util.*;
 import com.jason.Album;
 import com.jason.MusicOrganizer;
 import com.jason.Song;
-import org.junit.Ignore;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
 /**
  * A test class for the MusicOrganizer class.
+ * Comment: it may look like I'm missing an opportunity to abstract a few helper classes -- lots of what look like
+ * copy / paste blocks -- but there are fewer opportunities for code reuse than you'd think. The test cases are
+ * highly specialized and would not lend themselves nicely to an approach like this.
  *
  * Created by Jason Herrboldt (intothefuture@gmail.com) on 5/24/2016.
  */
@@ -33,7 +35,6 @@ public class MusicOrganizerTest {
                 albumTrackNumbersBeforeSorting.add(song.getAlbumTrackNumber());
                 albumTrackNumbersAfterSorting.add(song.getAlbumTrackNumber());
             }
-
             Collections.sort(albumTrackNumbersAfterSorting);
             assertEquals(albumTrackNumbersAfterSorting, albumTrackNumbersBeforeSorting);
         }
@@ -81,7 +82,6 @@ public class MusicOrganizerTest {
                 albumTrackNumbersBeforeSorting.add(song.getAlbumTrackNumber());
                 albumTrackNumbersAfterSorting.add(song.getAlbumTrackNumber());
             }
-
             Collections.sort(albumTrackNumbersAfterSorting);
             assertEquals(albumTrackNumbersAfterSorting, albumTrackNumbersBeforeSorting);
         }
