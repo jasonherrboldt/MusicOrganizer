@@ -189,7 +189,6 @@ public class MusicOrganizer {
     public void printSongsToOutputFile() {
         try {
             PrintWriter writer = new PrintWriter(outputFileName, "UTF-8");
-            // writer.println("oh hai overwriting to output file."); // debug
             if(!sortBy.equalsIgnoreCase("song") && !sortBy.equalsIgnoreCase("time")) {
                 for(Album album : sortedAlbums) {
                     List<Song> songs = album.getSongs();
