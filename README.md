@@ -32,7 +32,6 @@ Command line usage:
 Exceptions for these cases should be logged to the console. All are fatal unless otherwise specified: 
 
 - an input file line without all of the following: an artist, a song title, a genre, and a time -– album title and track are optional (ok to log, ignore, and continue);
-- an invalid song length, e.g. 376 (ok to log, ignore and continue);
 - unable to open input file;
 - unable to read input file.
 
