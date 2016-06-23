@@ -1,4 +1,4 @@
-# MusicOrganizer
+# Music Organizer
 ###Description
 This is a coding exercise I made up to sharpen and demonstrate my Java skills. It was written in Java 8, and I am the only one who made commits. It's a command line driven program that reads a list of songs from a file, sorts them according to user preference, and prints the organized song list to another file.
 
