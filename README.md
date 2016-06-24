@@ -100,7 +100,7 @@ Sample input (extract):
     Ladyhawke,Love Don't Live Here,Ladyhawke,6,Rock,242
     Ta-ku,Love Lost,Songs To Break Up To,4,Hip Hop / R&B,242
 
-Sample output (extract):
+Sample output (extract, sorted ascending by genre):
 
     genre: 80s | artist: Hall & Oates | album: The Best Of Hall & Oates | song: Kiss On My List | album track #: 1 | time: 234
     genre: 80s | artist: Hall & Oates | album: The Best Of Hall & Oates | song: You Make My Dreams | album track #: 2 | time: 187
