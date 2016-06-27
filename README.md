@@ -20,7 +20,7 @@ A user may specify the initial sorting, as well as the ascending / descending or
 
 Album track sorting should always be ascending, irrespective of the selected overall ordering. 
 
-Each comma-separated line of the input file should be in this format: [artist], [song title], [album title (may be left out)], [album track number (a unique positive integer) (may be left out)], [genre], [song length (must be of the form MMSS, eg 244)]. 
+Each comma-separated line of the input file should be in this format: [artist], [song title], [album title (may be left out)], [album track number (a unique positive integer) (may be left out)], [genre], [song length (must be of the form SSS, eg 244)]. 
 
 Command line usage: 
 
