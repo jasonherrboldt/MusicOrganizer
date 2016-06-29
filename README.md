@@ -37,7 +37,20 @@ Exceptions for these cases should be logged to the console. All are fatal unless
 
 An example input file example is located in the root directory (input_file.txt). It has full albums, singles, and one or two incomplete lines that should be ignored by the program. An example output file is also available (output_file.txt), showing the same songs after being sorted ascending by genre.
 
-Sample input (extract):
+###Take It For A Spin
+
+* Make sure you have Git and Java 8 installed locally. 
+* Click Clone or download and copy the clone URL.
+* Open a terminal window and navigate to a directory in your computer.
+* $git clone [CLONE_URL]
+* $cd MusicOrganizer
+* $javac src/com/jason/*.java
+* $java -cp ./src com.jason.Main input_file.txt output_file.txt -sortby song -sortorder descending
+* Open output_file.txt and see songs sorted descending by song title.
+
+###Sample Input / Output 
+
+Sample input (extract from input_file.txt):
 
     Hall & Oates,Adult Education,The Best Of Hall & Oates,9,80s,241
     Pomo,Aerobix,The Other Day,15,Electronic,243
@@ -100,7 +113,7 @@ Sample input (extract):
     Ladyhawke,Love Don't Live Here,Ladyhawke,6,Rock,242
     Ta-ku,Love Lost,Songs To Break Up To,4,Hip Hop / R&B,242
 
-Sample output (extract, sorted ascending by genre):
+Sample output (extract from output_file.txt, sorted ascending by genre):
 
     genre: 80s | artist: Hall & Oates | album: The Best Of Hall & Oates | song: Kiss On My List | album track #: 1 | time: 234
     genre: 80s | artist: Hall & Oates | album: The Best Of Hall & Oates | song: You Make My Dreams | album track #: 2 | time: 187
