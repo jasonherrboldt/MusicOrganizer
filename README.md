@@ -39,7 +39,7 @@ An example input file example is located in the root directory (input_file.txt).
 
 ###Take It For A Spin
 
-* Make sure you have Git and Java 8 installed locally. 
+* Make sure you have Git and the Java 8 SDK installed locally. 
 * Click Clone or download and copy the clone URL.
 * Open a terminal window and navigate to a directory in your computer.
 * $git clone [CLONE_URL]
