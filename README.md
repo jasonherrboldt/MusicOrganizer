@@ -176,3 +176,66 @@ Sample output (extract from output_file.txt, sorted ascending by genre):
     genre: Electronic | artist: Total Science | album: Mars Needs Total Science | song: All I Need | album track #: 12 | time: 244
     genre: Electronic | artist: Unai | album: Lost On Arrival | song: Loving That Lost Feeling | album track #: 11 | time: 242
     genre: Electronic | artist: Universal Indicator | album: Yellow | song: Wayne's Tantrum | album track #: 2 | time: 192
+
+Sample output (extract from output_file.txt, sorted descending by song):
+
+    song: Your Imagination (Extended Edit) | artist: Hall & Oates | album: The Best Of Hall & Oates | genre: 80s | time: 308 | album track #: 5
+    song: You Make My Dreams | artist: Hall & Oates | album: The Best Of Hall & Oates | genre: 80s | time: 187 | album track #: 2
+    song: You And Your Sister | artist: This Mortal Coil | album: Blood | genre: Punk & Alternative | time: 194 | album track #: 6
+    song: WTF (Where They From) [feat. Pharrell Williams] | artist: Missy Elliott | album: WTF (Where They From) [feat. Pharrell Williams] - Single | genre: Hip Hop / R&B | time: 192 | album track #: 1
+    song: Wind Loop | artist: Teebs | album: Ardour | genre: Electronic | time: 194 | album track #: 7
+    song: Wayne's Tantrum | artist: Universal Indicator | album: Yellow | genre: Electronic | time: 192 | album track #: 2
+    song: Walking in L.A. | artist: Missing Persons | album: Spring Session M | genre: Rock | time: 240 | album track #: 5
+    song: Vou Voar | artist: Sabrina Malheiros | album: New Morning | genre: Latin | time: 242 | album track #: 11
+    song: Useless Landscape [Inutil Paisagem] | artist: Elis Regina E Tom Jobim | album: Bossa Nova - Original Motion Picture Soundtrack | genre: Latin | time: 189 | album track #: 11
+    song: untitled #3 | artist: Q-Chastic | album: Q-Chastic EP | genre: Electronic | time: 243 | album track #: 3
+    song: Understand (Feat. DJ Rashad & Nick Hook) | artist: Machinedrum | album: Movin' Forward: A Tribute To DJ Rashad | genre: Hip Hop / R&B | time: 241 | album track #: 1
+    song: Transitions | artist: Roy Davis Jr. & Jay Juniel | album: Roy Davis Jr DJ Mix | genre: Electronic | time: 243 | album track #: 1
+    song: Touch A Four Leaf Clover | artist: Atlantic Starr | album:  | genre: R&B | time: 241 | album track #: 
+    song: Tomara | artist: Paula Morelenbaum | album: Berimbaum | genre: Latin | time: 243 | album track #: 1
+    song: TMPL | artist: Machinedrum | album: Room(s) Extended | genre: Hip Hop / R&B | time: 240 | album track #: 3
+    song: Time is the Answer | artist: Frozen Ghost | album: Frozen Ghost | genre: Rock | time: 242 | album track #: 16
+    song: There's Only One | artist: Tones On Tail | album: Tones On Tail | genre: Punk & Alternative | time: 241 | album track #: 5
+    song: The Coathanger | artist: Squarepusher | album: Just A Souvenir | genre: Electronic | time: 243 | album track #: 2
+    song: The Ballad Of Dorothy Parker | artist: Prince | album: Sign O' The Times [Disc 1] | genre: R&B | time: 241 | album track #: 4
+    song: Thais (2) | artist: This Mortal Coil | album: Filigree & Shadow | genre: Punk & Alternative | time: 193 | album track #: 25
+    song: Summer Solstice At Cape Canaveral | artist: The Host | album: The Host | genre: Hip Hop / R&B | time: 193 | album track #: 10
+    song: Sulphuric Euphoria | artist: Inanimate Existence | album: Liberation Through Hearing | genre: Death Metal | time: 243 | album track #: 8
+    song: Suff Daddy - Smile | artist: Suff Daddy & Ta-Ku | album: Bricks & Mortar | genre: Hip Hop / R&B | time: 191 | album track #: 2
+    song: Suburbia | artist: Pet Shop Boys | album:  | genre: 80s | time: 244 | album track #: 4
+    song: Strut | artist: Sheena Easton | album:  | genre: 80s | time: 240 | album track #: 
+    song: Strange Relationship | artist: Prince | album: Sign O' The Times [Disc 2] | genre: R&B | time: 241 | album track #: 3
+    song: Spring Is Here | artist: Cal Tjader  | album: Soul Sauce | genre: Latin | time: 243 | album track #: 8
+    song: Something In The Water (Does Not Compute) | artist: Prince | album: 1999 | genre: R&B | time: 242 | album track #: 7
+    song: Somebodys Watching Me | artist: Rockwell | album:  | genre: 80s | time: 241 | album track #: 5
+    song: Some Things Are Better Left Unsaid | artist: Hall & Oates | album: The Best Of Hall & Oates | genre: 80s | time: 325 | album track #: 11
+    song: She's A Beauty | artist: The Tubes | album:  | genre: 80s | time: 241 | album track #: 15
+    song: She Is Not Alone | artist: Sonic Youth | album: Sonic Youth EP | genre: Punk & Alternative | time: 242 | album track #: 3
+    song: Several Times | artist: This Mortal Coil | album: Blood | genre: Punk & Alternative | time: 192 | album track #: 11
+    song: Say It Isn't So | artist: Hall & Oates | album: The Best Of Hall & Oates | genre: 80s | time: 257 | album track #: 8
+    song: Sabia | artist: Antonio Carlos Jobim | album: Stone Flower | genre: Latin | time: 240 | album track #: 9
+    song: Red In Blue | artist: Squarepusher | album: Ufabulum | genre: Electronic | time: 191 | album track #: 5
+    song: Ramen Hotline (feat. eLan Go Yama & Elaquent) | artist: Mike Gao | album: Migamo | genre: Hip Hop / R&B | time: 192 | album track #: 11
+    song: Private Eyes | artist: Hall & Oates | album: The Best Of Hall & Oates | genre: 80s | time: 217 | album track #: 3
+    song: Poath | artist: Ta-ku | album: Latenyc | genre: Hip Hop / R&B | time: 244 | album track #: 
+    song: Planet Gear | artist: Squarepusher | album: Just A Souvenir | genre: Electronic | time: 242 | album track #: 8
+    song: Peg | artist: Steely Dan | album: Aja | genre: Classic Rock | time: 235 | album track #: 4
+    song: Paths to Enlightenment | artist: Inanimate Existence | album: Liberation Through Hearing | genre: Death Metal | time: 241 | album track #: 4
+    song: Parallels | artist: THE SOFT MOON | album: The Soft Moon | genre: Punk & Alternative | time: 190 | album track #: 
+    song: Paradise | artist: Sade | album: Stronger Than Pride | genre: R&B | time: 242 | album track #: 2
+    song: Out Of Touch | artist: Hall & Oates | album: The Best Of Hall & Oates | genre: 80s | time: 248 | album track #: 10
+    song: Only The Lonely | artist: Motels | album:  | genre: 80s | time: 194 | album track #: 
+    song: Number Of Death (13) | artist: Katalepsy | album: Triumph Of Evilution | genre: Death Metal | time: 244 | album track #: 4
+    song: Never | artist: Heart | album:  | genre: 80s | time: 243 | album track #: 4
+    song: Need You Tonight | artist: INXS | album:  | genre: 80s | time: 190 | album track #: 4
+    song: My Whole Life | artist: Teebs | album: Ardour | genre: Electronic | time: 191 | album track #: 14
+    song: My Demise | artist: Suffocation | album: Pinnacle Of Bedlam | genre: Death Metal | time: 244 | album track #: 7
+    song: Morning Dreams | artist: Ladyhawke | album: Ladyhawke | genre: Rock | time: 240 | album track #: 12
+    song: Mickey | artist: Toni Basil | album:  | genre: 80s | time: 242 | album track #: 
+    song: Meeker Warm Energy | artist: Lone | album: Reality Testing | genre: Hip Hop / R&B | time: 240 | album track #: 3
+    song: Mary-Christ | artist: Sonic Youth | album: Goo | genre: Punk & Alternative | time: 191 | album track #: 3
+    song: Marilyn Moore | artist: Sonic Youth | album: EVOL  | genre: Punk & Alternative | time: 244 | album track #: 8
+    song: Maramoor Mambo | artist: Cal Tjader  | album: Soul Sauce | genre: Latin | time: 243 | album track #: 5
+    song: Maniac | artist: Michael Sembello | album:  | genre: 80s | time: 244 | album track #: 6
+    song: Maneater | artist: Hall & Oates | album: The Best Of Hall & Oates | genre: 80s | time: 264 | album track #: 6
+    song: Major Tom | artist: Peter Schilling | album:  | genre: 80s | time: 240 | album track #: 
