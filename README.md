@@ -44,6 +44,7 @@ An example input file example is located in the root directory (input_file.txt).
 * Open a terminal window and navigate to a directory in your computer.
 * $git clone [CLONE_URL]
 * $cd MusicOrganizer
+* Delete output_file.txt (running the program will make a new one)
 * $javac src/com/jason/*.java
 * $java -cp ./src com.jason.Main input_file.txt output_file.txt -sortby song -sortorder descending
 * Open output_file.txt and see songs sorted descending by song title.
