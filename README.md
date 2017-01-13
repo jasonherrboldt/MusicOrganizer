@@ -39,14 +39,13 @@ An example input file example is located in the root directory (input_file.txt).
 
 ###Take It For A Spin
 
-* Make sure you have Git and the Java 8 SDK installed locally. 
-* Click Clone or download and copy the clone URL.
-* Open a terminal window and navigate to a directory in your computer.
-* $ git clone [CLONE_URL]
-* $ cd MusicOrganizer
-* Delete output_file.txt (running the program will make a new one)
-* $ javac src/com/jason/*.java
-* $ java -cp ./src com.jason.Main input_file.txt output_file.txt -sortby song -sortorder descending
+* Make sure you have at least Java 8 installed locally. CLick [here] (http://www.oracle.com/technetwork/java/javase/downloads/index.html) for Oracle JDK download links. 
+* Click on the Release tab of this project and download the zip. 
+* Unzip the directory to your local drive. 
+* Delete output_file.txt in the project directory (running the program will make a new one)
+* Open a terminal window and cd path/to/MusicOrganizer
+* javac src/com/jason/*.java
+* java -cp ./src com.jason.Main input_file.txt output_file.txt -sortby song -sortorder descending
 * Open output_file.txt and see songs sorted descending by song title.
 
 ###Sample Input / Output 
