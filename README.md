@@ -39,7 +39,7 @@ An example input file example is located in the root directory (input_file.txt).
 
 ### Take It For A Spin
 
-* Make sure you have at least Java 8 installed locally. CLick [here] (http://www.oracle.com/technetwork/java/javase/downloads/index.html) for Oracle JDK download links. 
+* Make sure you have at least Java 8 installed locally. Click [here](http://www.oracle.com/technetwork/java/javase/downloads/index.html) for Oracle JDK download links. 
 * Click on the Release tab of this project and download the zip. 
 * Unzip the directory to your local drive. 
 * Delete output_file.txt in the project directory (running the program will make a new one)
