@@ -1,10 +1,10 @@
 # Music Organizer
-###Description
+### Description
 This is a coding exercise I made up to sharpen and demonstrate my Java skills. It was written in Java 8, and I am the only one who made commits. It's a command line driven program that reads a list of songs from a file, sorts them according to user preference, and prints the organized song list to another file.
 
 The user may elect to have the songs sorted by genre, by artist, by album, by song title, or by song length, either all ascending or all descending. (Default is ascending by genre -- see the table below.) 
 
-###Details, Assumptions, and Requirements
+### Details, Assumptions, and Requirements
 
 Albums are assumed to contain songs of the same genre. An album's genre is determined by the genre of the first song that is added to it (not necessarily the song with the lowest album track number.) This is an unfortunate compromise to save hours of coding for rare edge cases.
 
@@ -37,7 +37,7 @@ Exceptions for these cases should be logged to the console. All are fatal unless
 
 An example input file example is located in the root directory (input_file.txt). It has full albums, singles, and one or two incomplete lines that should be ignored by the program. An example output file is also available (output_file.txt), showing the same songs after being sorted ascending by genre.
 
-###Take It For A Spin
+### Take It For A Spin
 
 * Make sure you have at least Java 8 installed locally. CLick [here] (http://www.oracle.com/technetwork/java/javase/downloads/index.html) for Oracle JDK download links. 
 * Click on the Release tab of this project and download the zip. 
@@ -48,7 +48,7 @@ An example input file example is located in the root directory (input_file.txt).
 * java -cp ./src com.jason.Main input_file.txt output_file.txt -sortby song -sortorder descending
 * Open output_file.txt and see songs sorted descending by song title.
 
-###Sample Input / Output 
+### Sample Input / Output 
 
 Sample input (extract from input_file.txt):
 
